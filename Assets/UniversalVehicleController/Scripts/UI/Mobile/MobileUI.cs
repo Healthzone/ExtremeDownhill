@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using YG;
 
 namespace PG.UI
 {
-    public class MobileUI :MonoBehaviour
+    public class MobileUI : MonoBehaviour
     {
         public CarControllerInput UserInput;
         public PlayerController PlayerController;
@@ -33,9 +32,9 @@ namespace PG.UI
         int SelectedIndex = 0;
         public Button SelectNextControl;
 
-        private void Awake ()
+        private void Awake()
         {
-            gameObject.SetActive (Application.isMobilePlatform);
+            gameObject.SetActive(GameSettings.IsMobilePlatform);
 
             if (!gameObject.activeInHierarchy)
             {
@@ -44,11 +43,11 @@ namespace PG.UI
 
             foreach (var controls in AllControls)
             {
-                controls.Init (UserInput);
+                controls.Init(UserInput);
             }
         }
 
-        void Start ()
+        void Start()
         {
             if (!gameObject.activeInHierarchy)
             {
@@ -57,12 +56,12 @@ namespace PG.UI
 
             if (!PlayerController)
             {
-                PlayerController = GetComponentInParent<PlayerController> ();
+                PlayerController = GetComponentInParent<PlayerController>();
             }
 
-            SelectNextControl.onClick.AddListener (OnSelectNextControl);
-            SelectedIndex = PlayerPrefs.GetInt ("MobileControlsIndex", 0);
-            SelectControl (SelectedIndex);
+            SelectNextControl.onClick.AddListener(OnSelectNextControl);
+            SelectedIndex = PlayerPrefs.GetInt("MobileControlsIndex", 0);
+            SelectControl(SelectedIndex);
 
             if (NextGearBtn)
             {
@@ -70,71 +69,75 @@ namespace PG.UI
             }
             if (PrevGearBtn)
             {
-                PrevGearBtn.onClick.AddListener (() => UserInput.PrevGear ());
+                PrevGearBtn.onClick.AddListener(() => UserInput.PrevGear());
             }
             if (SwitchLightsBtn)
             {
-                SwitchLightsBtn.onClick.AddListener (() => UserInput.SwitchLights ());
+                SwitchLightsBtn.onClick.AddListener(() => UserInput.SwitchLights());
             }
             if (SwitchLeftTurnSignalBtn)
             {
-                SwitchLeftTurnSignalBtn.onClick.AddListener (() => UserInput.SwitchLeftTurnSignal ());
+                SwitchLeftTurnSignalBtn.onClick.AddListener(() => UserInput.SwitchLeftTurnSignal());
             }
             if (SwitchRightTurnSignalBtn)
             {
-                SwitchRightTurnSignalBtn.onClick.AddListener (() => UserInput.SwitchRightTurnSignal ());
+                SwitchRightTurnSignalBtn.onClick.AddListener(() => UserInput.SwitchRightTurnSignal());
             }
             if (SwitchAlarmBtn)
             {
-                SwitchAlarmBtn.onClick.AddListener (() => UserInput.SwitchAlarm ());
+                SwitchAlarmBtn.onClick.AddListener(() => UserInput.SwitchAlarm());
             }
             if (ConnectTrailerBtn)
             {
-                ConnectTrailerBtn.onClick.AddListener (() => UserInput.ConnectTrailer ());
+                ConnectTrailerBtn.onClick.AddListener(() => UserInput.ConnectTrailer());
             }
             if (ResetCarBtn)
             {
-                ResetCarBtn.onClick.AddListener (() => UserInput.ResetCar ());
+                ResetCarBtn.onClick.AddListener(() => UserInput.ResetCar());
             }
             if (ChangeViewBtn)
             {
-                ChangeViewBtn.onClick.AddListener (() => UserInput.ChangeView ());
+                ChangeViewBtn.onClick.AddListener(() => UserInput.ChangeView());
             }
 
             if (RestoreCarBtn)
             {
-                RestoreCarBtn.onClick.AddListener (() => UserInput.RestoreCar());
+                RestoreCarBtn.onClick.AddListener(() => UserInput.RestoreCar());
             }
             if (RestartSceneBtn)
             {
-                RestartSceneBtn.onClick.AddListener (() => GameController.Instance.RestartScene ());
+                RestartSceneBtn.onClick.AddListener(() => GameController.Instance.RestartScene());
+            }
+            if (SetNextCarBtn)
+            {
+                SetNextCarBtn.onClick.AddListener(() => GameController.Instance.SetNextCar());
             }
             if (ExitFromCar)
             {
                 if (PlayerController && PlayerController.CanExitFromCar)
                 {
-                    ExitFromCar.SetActive (true);
-                    ExitFromCar.onClick.AddListener (() => PlayerController.ExitFromCar ());
+                    ExitFromCar.SetActive(true);
+                    ExitFromCar.onClick.AddListener(() => PlayerController.ExitFromCar());
                 }
                 else
                 {
-                    ExitFromCar.SetActive (false);
+                    ExitFromCar.SetActive(false);
                 }
             }
         }
 
-        void OnSelectNextControl ()
+        void OnSelectNextControl()
         {
-            SelectedIndex = MathExtentions.Repeat (SelectedIndex+1, 0, AllControls.Count - 1);
-            PlayerPrefs.SetInt ("MobileControlsIndex", SelectedIndex);
-            SelectControl (SelectedIndex);
+            SelectedIndex = MathExtentions.Repeat(SelectedIndex + 1, 0, AllControls.Count - 1);
+            PlayerPrefs.SetInt("MobileControlsIndex", SelectedIndex);
+            SelectControl(SelectedIndex);
         }
 
-        void SelectControl (int index)
+        void SelectControl(int index)
         {
             for (int i = 0; i < AllControls.Count; i++)
             {
-                AllControls[i].SetActive (index == i);
+                AllControls[i].SetActive(index == i);
                 if (AllControls[i].gameObject.activeInHierarchy)
                 {
                     CurrentControlText.text = AllControls[i].name;
