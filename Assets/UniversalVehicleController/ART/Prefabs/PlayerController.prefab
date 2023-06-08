@@ -202,14 +202,14 @@ MonoBehaviour:
   UseBindingsFromInputManager: 0
   HorizontalAxis: Horizontal
   VerticalAxis: Vertical
-  PichUpKey: 264
-  PichDownKey: 258
+  PichUpKey: 0
+  PichDownKey: 0
   NextGearKey: 0
   PrevGearKey: 0
-  SwitchLightsKey: 108
-  SwitchLeftTurnLightsKey: 113
-  SwitchRightTurnLightsKey: 101
-  SwitchAlarmKey: 120
+  SwitchLightsKey: 0
+  SwitchLeftTurnLightsKey: 0
+  SwitchRightTurnLightsKey: 0
+  SwitchAlarmKey: 0
   ConnectTrailerKey: 0
   ResetCarKey: 0
   RestoreCarKey: 0

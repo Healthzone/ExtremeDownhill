@@ -69,7 +69,7 @@ namespace PG
             if (!Application.isMobilePlatform)
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                //Cursor.visible = false;
             }
         }
 
