@@ -2698,7 +2698,7 @@ GameObject:
   - component: {fileID: 817118522}
   - component: {fileID: 817118523}
   m_Layer: 5
-  m_Name: SoundVolume
+  m_Name: RenderScale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3501,6 +3501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1147612591}
+  - component: {fileID: 1147612592}
   m_Layer: 5
   m_Name: SettingsPage
   m_TagString: Untagged
@@ -3531,6 +3532,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1147612592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147612590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639338ed79e0f7241958dea9d80c0c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 2113849885}
+  renderScaleSlider: {fileID: 817118523}
+  volumeValueLabel: {fileID: 1343531330}
+  renderScaleLabel: {fileID: 1210588407}
+  masterMixer: {fileID: 24100000, guid: a2d739c533a9185438428a66a6132a7b, type: 2}
+  urpAsset: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
 --- !u!4 &1203785947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1305539114992542989, guid: 0ab00ca05e0dd1f4088b7546a47a2e66,
