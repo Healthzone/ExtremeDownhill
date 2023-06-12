@@ -6,7 +6,7 @@ public class SceneTransitionManager : MonoBehaviour
 {
     public void StartLoadingLevel()
     {
-        if (PlayerLevelData.SelectedLevel != 0)
+        if (PlayerLevelData.SelectedLevel != "")
             SceneTransition.SwitchToScene(PlayerLevelData.SelectedLevel.ToString());
         else
             SceneTransition.SwitchToScene("1");

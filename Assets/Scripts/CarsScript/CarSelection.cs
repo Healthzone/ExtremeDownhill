@@ -12,6 +12,11 @@ public class CarSelection : MonoBehaviour
 
     private int currentCar;
 
+    private void Start()
+    {
+        SelectCar(0);
+    }
+
     private void SelectCar(int index)
     {
         for (int i = 0; i < carsContainer.childCount; i++)
@@ -30,6 +35,7 @@ public class CarSelection : MonoBehaviour
             currentCar = carsContainer.childCount - 1;
 
         PlayerLevelData.SelectedVehicle = currentCar;
+        Debug.Log(currentCar);
         SelectCar(currentCar);
     }
 }

@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 70
+  Health: 50
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 1
@@ -10873,7 +10873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 70
+  Health: 50
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
@@ -21551,7 +21551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 70
+  Health: 50
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
@@ -27050,7 +27050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 70
+  Health: 50
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 1
@@ -57752,7 +57752,7 @@ Transform:
   - {fileID: 5756783139438272820}
   - {fileID: 4643431430385643474}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1314693143270409754
 Rigidbody:
@@ -57810,7 +57810,7 @@ MonoBehaviour:
   TrailerConnectorPosition: {fileID: 0}
   SteerWheelMaxAngle: 120
   SteerWheel: {fileID: 6186210445912029016}
-  StartEngineInAwake: 1
+  StartEngineInAwake: 0
   StartEngineDellay: 1
   Engine:
     MaxMotorTorque: 650
@@ -58050,7 +58050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43fd575a4f3b124a994e5c934a4b4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageFactor: 1.7
+  DamageFactor: 1.24
   MaxCollisionMagnitude: 100
   MaxImpulseMagnitude: 35
   MaxDeformRadiusInMaxMag: 3

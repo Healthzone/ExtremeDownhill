@@ -17,6 +17,7 @@ namespace PG
     /// </summary>
     public class GameController : Singleton<GameController>
     {
+
         public Transform[] StartPositions;
         public List<CarController> AllCars = new List<CarController>();
         public bool m_SplitScreen;
@@ -29,36 +30,23 @@ namespace PG
 
         List<VehicleController> AllVehicles = new List<VehicleController>();
 
-        void Start()
+        public void OnEnable()
         {
-            if (StartPositions == null || StartPositions.Length <= 0)
-            {
-                var respawns = GameObject.FindGameObjectsWithTag("Respawn");
-                StartPositions = new Transform[respawns.Length];
-                for (int i = 0; i < respawns.Length; i++)
-                {
-                    StartPositions[i] = respawns[i].transform;
-                }
-            }
+            CarSelector.OnPlayerCarSpawned.AddListener(InitialiseCar);
+        }
+        public void OnDisable()
+        {
+            CarSelector.OnPlayerCarSpawned.RemoveListener(InitialiseCar);
+        }
+
+        public void InitialiseCar()
+        {
             AllCars.RemoveAll(c => c == null);
             AllVehicles = FindObjectsOfType<VehicleController>().ToList();
             var allCars = FindObjectsOfType<CarController>().ToList();
             AllCars.AddRange(allCars.Where(c => !AllCars.Contains(c)));
 
-
-
-            if (!PlayerCar1 && AllCars.Count == 0)
-            {
-                PlayerCar1 = Instantiate(B.GameSettings.AvailableVehicles.First(v => v as CarController) as CarController);
-                if (StartPositions != null && StartPositions.Length > 0)
-                {
-                    PlayerCar1.transform.position = StartPositions[0].position;
-                    PlayerCar1.transform.rotation = StartPositions[0].rotation;
-                }
-                AllVehicles.Add(PlayerCar1);
-                AllCars.Add(PlayerCar1);
-            }
-            else if (!PlayerCar1)
+            if (!PlayerCar1)
             {
                 PlayerCar1 = AllCars[0];
             }
@@ -122,7 +110,7 @@ namespace PG
         public void RestartScene()
         {
             var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.buildIndex);
+            SceneTransition.SwitchToScene(scene.name);
         }
     }
 

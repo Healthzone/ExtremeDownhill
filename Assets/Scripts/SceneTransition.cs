@@ -15,7 +15,9 @@ public class SceneTransition : MonoBehaviour
     {
         Debug.Log("Loading Scene: " + sceneName);
         _instance.loadSceneOperation = SceneManager.LoadSceneAsync(sceneName);
+        _instance.loadSceneOperation.allowSceneActivation = true;
         _instance.loadingPanel.SetActive(true);
+        
         //_instance.loadSceneOperation.allowSceneActivation = false;
         //DOTween.Sequence()
         //    .Append(_instance.canvasGroup.DOFade(1, 0.1f))
