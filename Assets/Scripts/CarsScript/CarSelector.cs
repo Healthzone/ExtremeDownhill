@@ -13,13 +13,11 @@ public class CarSelector : MonoBehaviour
 
     public void OnEnable()
     {
-        Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += InitPlayer;
     }
 
     public void OnDisable()
     {
-        Debug.Log("OnDisable");
         SceneManager.sceneLoaded -= InitPlayer;
     }
 

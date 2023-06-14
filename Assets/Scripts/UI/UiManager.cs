@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
-using YG;
 
 public class UiManager : MonoBehaviour
 {
@@ -21,31 +18,39 @@ public class UiManager : MonoBehaviour
 
     public void SwitchMainPage(bool enabled)
     {
-        mainPage.SetActive(enabled);
+        if (mainPage != null)
+            mainPage.SetActive(enabled);
     }
     public void SwitchSettingsPage(bool enabled)
     {
-        settingsPage.SetActive(enabled);
-        if (!enabled)
+        if (settingsPage != null)
         {
-            Debug.Log("Savind settings data");
+            settingsPage.SetActive(enabled);
+            if (!enabled)
+            {
+                Debug.Log("Savind settings data");
 
-            float volume;
-            mainMixer.GetFloat("VolumeMixer", out volume);
+                float volume;
+                mainMixer.GetFloat("VolumeMixer", out volume);
 
-            GameSettings.SaveSettingsData(volume, urpAsset.renderScale);
+                GameSettings.SaveSettingsData(volume, urpAsset.renderScale);
+            }
         }
     }
     public void SwitchLevelSelectingPage(bool enabled)
     {
-        levelSelectingPage.SetActive(enabled);
+        if (levelSelectingPage != null)
+            levelSelectingPage.SetActive(enabled);
 
     }
 
     public void SwitchCarSelectingPage(bool enabled)
     {
-        carsContainer.SetActive(enabled);
-        carSelectingPage.SetActive(enabled);
+        if (carsContainer != null && carSelectingPage != null)
+        {
+            carsContainer.SetActive(enabled);
+            carSelectingPage.SetActive(enabled);
+        }
 
     }
 }

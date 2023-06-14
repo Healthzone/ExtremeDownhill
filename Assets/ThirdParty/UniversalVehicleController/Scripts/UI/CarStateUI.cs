@@ -92,7 +92,7 @@ namespace PG
 
         private void Awake()
         {
-            MeasurementUnits.text = B.GameSettings.EnumMeasurementSystem == MeasurementSystem.KM ? "kmh" : "mph";
+            MeasurementUnits.text = "КМ/Ч";
         }
 
         private void Update()

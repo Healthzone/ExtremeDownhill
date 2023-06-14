@@ -8,6 +8,9 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private Image loadingProgressBar;
     [SerializeField] private GameObject loadingPanel;
+
+    [SerializeField] private float waitDelay = 1f;
+
     private static SceneTransition _instance;
     private AsyncOperation loadSceneOperation;
 
@@ -15,9 +18,9 @@ public class SceneTransition : MonoBehaviour
     {
         Debug.Log("Loading Scene: " + sceneName);
         _instance.loadSceneOperation = SceneManager.LoadSceneAsync(sceneName);
-        _instance.loadSceneOperation.allowSceneActivation = true;
+         _instance.loadSceneOperation.allowSceneActivation = false;
         _instance.loadingPanel.SetActive(true);
-        
+
         //_instance.loadSceneOperation.allowSceneActivation = false;
         //DOTween.Sequence()
         //    .Append(_instance.canvasGroup.DOFade(1, 0.1f))
@@ -34,9 +37,18 @@ public class SceneTransition : MonoBehaviour
         if (loadSceneOperation != null)
         {
             loadingProgressBar.fillAmount = Mathf.Lerp(loadingProgressBar.fillAmount, loadSceneOperation.progress, Time.deltaTime * 5);
+
+            StartCoroutine(WaitSomeTimeAfterLoadedScene());
         }
+
     }
 
+    IEnumerator WaitSomeTimeAfterLoadedScene()
+    {
+        yield return new WaitForSeconds(waitDelay);
+        loadSceneOperation.allowSceneActivation = true;
+       // yield return null ;
+    }
     private void OnAnimationOver()
     {
         _instance.loadSceneOperation.allowSceneActivation = true;

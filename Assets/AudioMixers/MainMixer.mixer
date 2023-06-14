@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7775252011958857978
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 72b3b01b8b2e5dd49b3f58d2fc4d46b5
+  m_EffectName: Attenuation
+  m_MixLevel: e925cc7d3ddb721439941dd890e88150
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-1218000517541662226
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GameSound
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9ab4ea47471e2d44d8e2699af46f0e4c
+  m_Children: []
+  m_Volume: b8a8bb67154adee499bfad682caaf67b
+  m_Pitch: 85662fccb61ced640884917e391d0e3c
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7775252011958857978}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -16,11 +49,14 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
-  - guid: b861809dd6d1bc2448793b7083db366c
+  - guid: b8a8bb67154adee499bfad682caaf67b
     name: VolumeMixer
+  - guid: b861809dd6d1bc2448793b7083db366c
+    name: MainMixer
   m_AudioMixerGroupViews:
   - guids:
     - 07c95c7300ea88241bf45d54a3ef6ac8
+    - 9ab4ea47471e2d44d8e2699af46f0e4c
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -33,7 +69,8 @@ AudioMixerGroupController:
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 07c95c7300ea88241bf45d54a3ef6ac8
-  m_Children: []
+  m_Children:
+  - {fileID: -1218000517541662226}
   m_Volume: b861809dd6d1bc2448793b7083db366c
   m_Pitch: e8dbd41e50d166541960ffd1b82cfa92
   m_Send: 00000000000000000000000000000000
@@ -67,5 +104,6 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 8f8edca872da4cf41a082e5065d8e61b
   m_FloatValues:
-    b861809dd6d1bc2448793b7083db366c: -10.474858
+    b8a8bb67154adee499bfad682caaf67b: -10
+    b861809dd6d1bc2448793b7083db366c: -0.301639
   m_TransitionOverrides: {}

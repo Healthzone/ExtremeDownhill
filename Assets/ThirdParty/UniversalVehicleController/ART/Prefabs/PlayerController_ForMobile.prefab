@@ -596,7 +596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.6401367, y: 96.3}
+  m_AnchoredPosition: {x: -16, y: 109}
   m_SizeDelta: {x: -254.24002, y: -270.5}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &6439900289503286886
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: km/h
+  m_text: "\u041A\u041C/\u0427"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2012668ff0234a47b5969bd3eff5ccf, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: fa18ae2690e2f7a4384d2eb7c0a630bc, type: 2}
@@ -654,8 +654,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -819,79 +819,8 @@ PrefabInstance:
       propertyPath: UserInput
       value: 
       objectReference: {fileID: 5629566705872042537}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: ExitFromCar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: ResetCarBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: RestoreCarBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: SetNextCarBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: SwitchAlarmBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: SwitchLightsBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: ConnectTrailerBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: AllControls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: SwitchLeftTurnSignalBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: SwitchRightTurnSignalBtn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4706507049479315329, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: AllControls.Array.data[1]
-      value: 
-      objectReference: {fileID: 3626565425571635622}
-    - target: {fileID: 6247471291120659665, guid: 1524c4835537a674eaf4e6d89a3123ed,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2418840217725543358, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 1499515839708549255, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 8388626243287121680, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 8890568353247576673, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 6994909012234824622, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 3918580893443462172, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 3922854775242571548, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 7656329326635983915, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 3922854774435685185, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 836083190359486194, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
-    - {fileID: 5679017063857245147, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1524c4835537a674eaf4e6d89a3123ed, type: 3}
@@ -901,18 +830,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3802270042370240382}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3626565425571635622 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 472955472257699544, guid: 1524c4835537a674eaf4e6d89a3123ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 3802270042370240382}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18bf1d0bb0e3ba042adcaabaef9c2778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5345258187578524334
 PrefabInstance:
   m_ObjectHideFlags: 0

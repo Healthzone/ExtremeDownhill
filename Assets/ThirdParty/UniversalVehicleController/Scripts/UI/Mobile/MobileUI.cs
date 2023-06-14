@@ -23,11 +23,16 @@ namespace PG.UI
         public Button ConnectTrailerBtn;
         public Button ResetCarBtn;
         public Button ChangeViewBtn;
+        public Button OpenMenuBtn;
 
         public Button RestoreCarBtn;
         public Button RestartSceneBtn;
         public Button SetNextCarBtn;
         public Button ExitFromCar;
+
+
+        [Space(15)]
+        public MobileButtonsPanel mobileButtonsPanel;
 
         int SelectedIndex = 0;
         public Button SelectNextControl;
@@ -124,6 +129,17 @@ namespace PG.UI
                     ExitFromCar.SetActive(false);
                 }
             }
+
+            if (OpenMenuBtn)
+            {
+                OpenMenuBtn.onClick.AddListener(() => SetGamePause());
+            }
+        }
+
+        private void SetGamePause()
+        {
+            PauseUI.SetPauseGame();
+            mobileButtonsPanel.gameObject.SetActive(false);
         }
 
         void OnSelectNextControl()
@@ -140,7 +156,7 @@ namespace PG.UI
                 AllControls[i].SetActive(index == i);
                 if (AllControls[i].gameObject.activeInHierarchy)
                 {
-                    CurrentControlText.text = AllControls[i].name;
+                    CurrentControlText.text = AllControls[i].Name;
                 }
             }
         }
