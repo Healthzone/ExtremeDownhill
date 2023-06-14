@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering.Universal;
+using YG;
 
 public class UiManager : MonoBehaviour
 {
@@ -11,6 +14,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject carSelectingPage;
     [SerializeField] private GameObject carsContainer;
 
+    [Header("Settings component references")]
+    [SerializeField] private UniversalRenderPipelineAsset urpAsset;
+    [SerializeField] private AudioMixer mainMixer;
+
 
     public void SwitchMainPage(bool enabled)
     {
@@ -19,6 +26,15 @@ public class UiManager : MonoBehaviour
     public void SwitchSettingsPage(bool enabled)
     {
         settingsPage.SetActive(enabled);
+        if (!enabled)
+        {
+            Debug.Log("Savind settings data");
+
+            float volume;
+            mainMixer.GetFloat("VolumeMixer", out volume);
+
+            GameSettings.SaveSettingsData(volume, urpAsset.renderScale);
+        }
     }
     public void SwitchLevelSelectingPage(bool enabled)
     {

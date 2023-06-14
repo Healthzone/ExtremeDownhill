@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using YG;
 
 public class SettingsUI : MonoBehaviour
 {
@@ -33,17 +34,20 @@ public class SettingsUI : MonoBehaviour
         renderScaleSlider.onValueChanged.RemoveListener(OnRenderScaleSliderChanged);
     }
 
+
+
     private void Start()
     {
         float soundVolume;
-        masterMixer.GetFloat("VolumeMixer", out soundVolume);
-        volumeSlider.value = (soundVolume + 80f) / 100;
 
-        volumeValueLabel.text = MathF.Round(soundVolume + 80) + " %";
+        masterMixer.GetFloat("VolumeMixer", out soundVolume);
+        soundVolume = MathF.Round(soundVolume);
+        volumeSlider.value = (soundVolume + 80) / 100;
+
+        volumeValueLabel.text = (soundVolume + 80) + " %";
 
         renderScaleSlider.value = urpAsset.renderScale;
         renderScaleLabel.text = (int)(urpAsset.renderScale * 100) + " %";
-
     }
 
     private void OnVolumeSliderChanged(float value)
