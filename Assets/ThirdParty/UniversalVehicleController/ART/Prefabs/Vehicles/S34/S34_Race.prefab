@@ -67382,9 +67382,10 @@ GameObject:
   - component: {fileID: 7452193394398133850}
   - component: {fileID: 8007850469801515100}
   - component: {fileID: 1240011247153985018}
+  - component: {fileID: 3459443716154471308}
   m_Layer: 0
   m_Name: S34_Race
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67787,6 +67788,27 @@ MonoBehaviour:
   IgnoreFindInChildsMeshesAndColliders:
   - {fileID: 8591311463593666456}
   EnableLogAndGizmo: 0
+--- !u!65 &3459443716154471308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439464000950848844}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9981582, y: 1.5629222, z: 4.7268267}
+  m_Center: {x: 0, y: 0.6730591, z: -0.05640316}
 --- !u!1 &5487990334024537166
 GameObject:
   m_ObjectHideFlags: 0

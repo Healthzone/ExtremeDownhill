@@ -1,5 +1,6 @@
 using PG;
 using PG.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +17,35 @@ public class PauseUI : MonoBehaviour
 
 
     private bool isPaused = false;
+    private bool isLevelEnded = false;
 
     private static PauseUI _instance;
+
+    public static PauseUI Instance { get => _instance; }
+    public MobileUI MobileUI { get => mobileUI; }
+
+
+    private void OnEnable()
+    {
+        LevelEnding.OnLevelEnd.AddListener(LevelEnd);
+    }
+    private void OnDisable()
+    {
+        LevelEnding.OnLevelEnd.RemoveListener(LevelEnd);
+    }
+
+    private void LevelEnd()
+    {
+        isLevelEnded = true;
+
+        if (Application.isMobilePlatform)
+        {
+            if (mobileUI != null)
+                mobileUI = GameObject.FindGameObjectWithTag("MobileUI").GetComponent<MobileUI>();
+
+            mobileUI.mobileButtonsPanel.gameObject.SetActive(true);
+        }
+    }
 
     private void Start()
     {
@@ -31,7 +59,7 @@ public class PauseUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !isLevelEnded)
             if (!isPaused)
                 SetPauseGame();
             else
