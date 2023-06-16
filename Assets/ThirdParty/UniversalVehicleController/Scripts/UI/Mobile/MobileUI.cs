@@ -32,6 +32,7 @@ namespace PG.UI
         {
             LevelEnding.OnLevelEnd.AddListener(SwitchMobileButtons);
             PauseUI.OnGamePaused.AddListener(SwitchMobileButtons);
+            PlayerDeadTrigger.OnPlayerDead.AddListener(SwitchMobileButtons);
         }
 
 
@@ -39,7 +40,7 @@ namespace PG.UI
         {
             LevelEnding.OnLevelEnd.RemoveListener(SwitchMobileButtons);
             PauseUI.OnGamePaused.RemoveListener(SwitchMobileButtons);
-
+            PlayerDeadTrigger.OnPlayerDead.RemoveListener(SwitchMobileButtons);
         }
 
         private void SwitchMobileButtons()

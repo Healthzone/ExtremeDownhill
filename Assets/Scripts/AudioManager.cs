@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     {
         LevelEnding.OnLevelEnd.AddListener(SwitchAudioVolumeMixer);
         PauseUI.OnGamePaused.AddListener(SwitchAudioVolumeMixer);
+        PlayerDeadTrigger.OnPlayerDead.AddListener(SwitchAudioVolumeMixer);
+        SceneTransitionManager.OnSceneStartLoading.AddListener(SwitchAudioVolumeMixer);
     }
 
 
@@ -18,6 +20,8 @@ public class AudioManager : MonoBehaviour
     {
         LevelEnding.OnLevelEnd.RemoveListener(SwitchAudioVolumeMixer);
         PauseUI.OnGamePaused.RemoveListener(SwitchAudioVolumeMixer);
+        PlayerDeadTrigger.OnPlayerDead.RemoveListener(SwitchAudioVolumeMixer);
+        SceneTransitionManager.OnSceneStartLoading.RemoveListener(SwitchAudioVolumeMixer);
     }
 
     private void Start()

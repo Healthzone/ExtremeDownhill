@@ -33,7 +33,19 @@ public class SceneTransitionManager : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
-        OnSceneStartLoading.Invoke();
+        //OnSceneStartLoading.Invoke();
         SceneTransition.SwitchToScene("Menu");
+    }
+    public static void RestartCurrentLevel()
+    {
+        Time.timeScale = 1f;
+        OnSceneStartLoading.Invoke();
+        SceneTransition.SwitchToScene(SceneManager.GetActiveScene().name);
+    }
+
+    public static void RestartCurrentLevelFromMenu()
+    {
+        Time.timeScale = 1f;
+        SceneTransition.SwitchToScene(SceneManager.GetActiveScene().name);
     }
 }

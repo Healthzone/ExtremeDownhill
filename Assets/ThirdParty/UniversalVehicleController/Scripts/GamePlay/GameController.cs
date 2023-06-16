@@ -109,8 +109,7 @@ namespace PG
 
         public void RestartScene()
         {
-            var scene = SceneManager.GetActiveScene();
-            SceneTransition.SwitchToScene(scene.name);
+            SceneTransitionManager.RestartCurrentLevel();
         }
     }
 

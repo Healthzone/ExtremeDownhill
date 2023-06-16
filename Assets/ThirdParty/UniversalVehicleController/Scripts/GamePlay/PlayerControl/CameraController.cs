@@ -82,6 +82,7 @@ namespace PG
         {
             LevelEnding.OnLevelEnd.AddListener(DisableCameraRotation);
             PauseUI.OnGamePaused.AddListener(DisableCameraRotation);
+            PlayerDeadTrigger.OnPlayerDead.AddListener(DisableCameraRotation);
         }
 
 
@@ -89,6 +90,7 @@ namespace PG
         {
             LevelEnding.OnLevelEnd.RemoveListener(DisableCameraRotation);
             PauseUI.OnGamePaused.RemoveListener(DisableCameraRotation);
+            PlayerDeadTrigger.OnPlayerDead.RemoveListener(DisableCameraRotation);
 
         }
         private void DisableCameraRotation()

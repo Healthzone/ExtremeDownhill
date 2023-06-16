@@ -212,8 +212,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3252014629734535972}
   - component: {fileID: 3252014629734535971}
-  - component: {fileID: 2813163865657637283}
-  - component: {fileID: 3905810780011119258}
   m_Layer: 0
   m_Name: GameController_WithCarSelector
   m_TagString: Untagged
@@ -256,34 +254,6 @@ MonoBehaviour:
   StartPositions: []
   AllCars: []
   m_SplitScreen: 0
---- !u!114 &2813163865657637283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3252014629734535970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dd5d64af65426f4b9d269a70d001ab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseCanvasGameObject: {fileID: 0}
-  pausePage: {fileID: 0}
-  mainMixer: {fileID: 24100000, guid: a2d739c533a9185438428a66a6132a7b, type: 2}
---- !u!114 &3905810780011119258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3252014629734535970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52929ef7d8b1bb3498da629cea7275d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UICanvasGameObject: {fileID: 0}
 --- !u!1 &8172627269248037499
 GameObject:
   m_ObjectHideFlags: 0
