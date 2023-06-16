@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         if (mainMixer != null)
         {
             mainMixer.GetFloat("MainMixer", out currentVolume);
-            Debug.Log(currentVolume);
+
             if (currentVolume == 0)
                 mainMixer.SetFloat("MainMixer", -80f);
             else

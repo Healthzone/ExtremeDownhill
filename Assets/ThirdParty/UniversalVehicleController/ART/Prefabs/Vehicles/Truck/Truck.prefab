@@ -36394,8 +36394,8 @@ GameObject:
   - component: {fileID: 1636981633620130633}
   - component: {fileID: 2372521549842532696}
   - component: {fileID: 2372521549842532699}
-  - component: {fileID: 2372521549842532694}
   - component: {fileID: 7907576346899373715}
+  - component: {fileID: 1610539456083195846}
   m_Layer: 0
   m_Name: Truck
   m_TagString: Player
@@ -36465,7 +36465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e03c96f6164f2e4898ab8c82592beb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowBoundsGizmo: 1
+  ShowBoundsGizmo: 0
   VehicleName: Truck
   Wheels:
   - {fileID: 6038498970154762642}
@@ -36539,11 +36539,11 @@ MonoBehaviour:
     TargetCutOffRPM: 2800
     CutOffTime: 0.2
     EnableTurbo: 0
-    TurboIncreaseSpeed: 3
+    TurboIncreaseSpeed: 4
     TurboDecreaseSpeed: 10
     TurboAdditionalTorque: 0.2
-    EnableBoost: 0
-    BoostAmount: 2
+    EnableBoost: 1
+    BoostAmount: 20
     BoostAdditionalPower: 1
     ProbabilityBackfire: 0.2
     RPMToNextGear: 2800
@@ -36658,19 +36658,6 @@ MonoBehaviour:
     MainRatio: 3
     HasRGear: 1
     ReversGearRatio: 6
---- !u!114 &2372521549842532694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2372521549842532698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad85e0fcfaa4da45b8126b1aef4c6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnsSwitchHalfRepeatTime: 0.5
 --- !u!114 &7907576346899373715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36750,6 +36737,27 @@ MonoBehaviour:
   IgnoreFindInChildsMeshesAndColliders:
   - {fileID: 6038498970436560333}
   EnableLogAndGizmo: 0
+--- !u!65 &1610539456083195846
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2372521549842532698}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.677701, y: 2.8044388, z: 8.663166}
+  m_Center: {x: 0, y: 1.5366622, z: 0}
 --- !u!1 &2383610147786311424
 GameObject:
   m_ObjectHideFlags: 0
@@ -48437,7 +48445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5983535161967585309
 Transform:
   m_ObjectHideFlags: 0
@@ -75192,7 +75200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4248510164426819965
 Transform:
   m_ObjectHideFlags: 0
@@ -85672,6 +85680,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1636981633620130633}
     m_Modifications:
+    - target: {fileID: 2240283521692368616, guid: d2812aad96489dc47a83d3e0f4968194,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710335512235891405, guid: d2812aad96489dc47a83d3e0f4968194,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852625681308784476, guid: d2812aad96489dc47a83d3e0f4968194,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911601066204563485, guid: d2812aad96489dc47a83d3e0f4968194,
         type: 3}
       propertyPath: m_RootOrder
@@ -85741,6 +85764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530422635290373036, guid: d2812aad96489dc47a83d3e0f4968194,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

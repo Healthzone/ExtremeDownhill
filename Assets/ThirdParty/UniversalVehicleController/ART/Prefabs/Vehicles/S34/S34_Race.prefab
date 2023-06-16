@@ -67380,7 +67380,6 @@ GameObject:
   - component: {fileID: 4627179360850483190}
   - component: {fileID: 758979260770772581}
   - component: {fileID: 7452193394398133850}
-  - component: {fileID: 8007850469801515100}
   - component: {fileID: 1240011247153985018}
   - component: {fileID: 3459443716154471308}
   m_Layer: 0
@@ -67527,7 +67526,7 @@ MonoBehaviour:
     TurboDecreaseSpeed: 10
     TurboAdditionalTorque: 0.3
     EnableBoost: 1
-    BoostAmount: 10
+    BoostAmount: 6
     BoostAdditionalPower: 1
     ProbabilityBackfire: 0.5
     RPMToNextGear: 6400
@@ -67696,19 +67695,6 @@ MonoBehaviour:
     MainRatio: 3.8
     HasRGear: 1
     ReversGearRatio: 3.59
---- !u!114 &8007850469801515100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5439464000950848844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad85e0fcfaa4da45b8126b1aef4c6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnsSwitchHalfRepeatTime: 0.5
 --- !u!114 &1240011247153985018
 MonoBehaviour:
   m_ObjectHideFlags: 0

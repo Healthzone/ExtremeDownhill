@@ -57725,6 +57725,7 @@ GameObject:
   - component: {fileID: 1314693143270409754}
   - component: {fileID: 9213616652853960229}
   - component: {fileID: 685587590052386181}
+  - component: {fileID: 4730765671547523593}
   m_Layer: 0
   m_Name: S34_Race_ForCrazyroad
   m_TagString: Player
@@ -57869,7 +57870,7 @@ MonoBehaviour:
     TurboDecreaseSpeed: 10
     TurboAdditionalTorque: 0.3
     EnableBoost: 1
-    BoostAmount: 3
+    BoostAmount: 5
     BoostAdditionalPower: 1
     ProbabilityBackfire: 0.5
     RPMToNextGear: 6400
@@ -58117,6 +58118,27 @@ MonoBehaviour:
   IgnoreFindInChildsMeshesAndColliders:
   - {fileID: 8037990401700448231}
   EnableLogAndGizmo: 0
+--- !u!65 &4730765671547523593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6037654053613497651}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9981582, y: 1.5629222, z: 4.7268267}
+  m_Center: {x: 0, y: 0.6730591, z: -0.05640316}
 --- !u!1 &6088464612380382055
 GameObject:
   m_ObjectHideFlags: 0

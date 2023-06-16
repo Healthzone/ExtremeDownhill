@@ -61855,8 +61855,8 @@ GameObject:
   - component: {fileID: 4627179360850483190}
   - component: {fileID: 689164693563212937}
   - component: {fileID: 6312442828527371557}
-  - component: {fileID: 4751806214536801768}
   - component: {fileID: 8574975483102638637}
+  - component: {fileID: 1612853797001923351}
   m_Layer: 0
   m_Name: S34_Stock
   m_TagString: Player
@@ -62168,19 +62168,6 @@ MonoBehaviour:
     MainRatio: 4.5
     HasRGear: 1
     ReversGearRatio: 3.59
---- !u!114 &4751806214536801768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5439464000950848844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad85e0fcfaa4da45b8126b1aef4c6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnsSwitchHalfRepeatTime: 0.5
 --- !u!114 &8574975483102638637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62260,6 +62247,27 @@ MonoBehaviour:
   IgnoreFindInChildsMeshesAndColliders:
   - {fileID: 880260180102309255}
   EnableLogAndGizmo: 0
+--- !u!65 &1612853797001923351
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439464000950848844}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9981582, y: 1.5629222, z: 4.7268267}
+  m_Center: {x: 0, y: 0.6730591, z: -0.05640316}
 --- !u!1 &5487990334024537166
 GameObject:
   m_ObjectHideFlags: 0
