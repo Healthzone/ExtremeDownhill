@@ -5,15 +5,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 using YG;
 
 public class PauseUI : MonoBehaviour
 {
-    [SerializeField] private GameObject PauseCanvasGameObject;
-    [SerializeField] private AudioMixer mainMixer;
+    public static UnityEvent OnGamePaused = new UnityEvent();
 
-    private CameraController cameraController;
-    private MobileUI mobileUI;
+    [SerializeField] private GameObject PauseCanvasGameObject;
+    [SerializeField] private GameObject pausePage;
+    [SerializeField] private AudioMixer mainMixer;
 
 
     private bool isPaused = false;
@@ -22,7 +23,6 @@ public class PauseUI : MonoBehaviour
     private static PauseUI _instance;
 
     public static PauseUI Instance { get => _instance; }
-    public MobileUI MobileUI { get => mobileUI; }
 
 
     private void OnEnable()
@@ -37,23 +37,10 @@ public class PauseUI : MonoBehaviour
     private void LevelEnd()
     {
         isLevelEnded = true;
-
-        if (Application.isMobilePlatform)
-        {
-            if (mobileUI != null)
-                mobileUI = GameObject.FindGameObjectWithTag("MobileUI").GetComponent<MobileUI>();
-
-            mobileUI.mobileButtonsPanel.gameObject.SetActive(true);
-        }
     }
 
     private void Start()
     {
-        cameraController = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>();
-
-        if (Application.isMobilePlatform)
-            mobileUI = GameObject.FindGameObjectWithTag("MobileUI").GetComponent<MobileUI>();
-
         _instance = this;
     }
 
@@ -75,11 +62,11 @@ public class PauseUI : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-        _instance.mainMixer.SetFloat("MainMixer", -80f);
         _instance.PauseCanvasGameObject.SetActive(true);
+        _instance.pausePage.SetActive(true);
         _instance.isPaused = true;
-        if (_instance.cameraController != null)
-            _instance.cameraController.enabled = false;
+
+        OnGamePaused?.Invoke();
 
     }
 
@@ -90,21 +77,13 @@ public class PauseUI : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-        else
-        {
-            if (mobileUI == null)
-                mobileUI = GameObject.FindGameObjectWithTag("MobileUI").GetComponent<MobileUI>();
-
-            mobileUI.mobileButtonsPanel.gameObject.SetActive(true);
-
-        }
-
-        mainMixer.SetFloat("MainMixer", 0f);
 
         PauseCanvasGameObject.SetActive(false);
+        pausePage.SetActive(false);
         isPaused = false;
-        if (cameraController != null)
-            cameraController.enabled = true;
+
+
+        OnGamePaused?.Invoke();
 
     }
 }

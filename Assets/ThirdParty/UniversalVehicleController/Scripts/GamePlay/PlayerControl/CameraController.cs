@@ -78,6 +78,24 @@ namespace PG
         RaycastHit[] Hits = new RaycastHit[4];
         bool ManualRotation;
 
+        private void OnEnable()
+        {
+            LevelEnding.OnLevelEnd.AddListener(DisableCameraRotation);
+            PauseUI.OnGamePaused.AddListener(DisableCameraRotation);
+        }
+
+
+        private void OnDisable()
+        {
+            LevelEnding.OnLevelEnd.RemoveListener(DisableCameraRotation);
+            PauseUI.OnGamePaused.RemoveListener(DisableCameraRotation);
+
+        }
+        private void DisableCameraRotation()
+        {
+            ActivePreset.EnableRotation = !ActivePreset.EnableRotation;
+        }
+
         public override bool Initialize (VehicleController vehicle)
         {
             if (Car != null)

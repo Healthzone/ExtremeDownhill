@@ -11,26 +11,14 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject carSelectingPage;
     [SerializeField] private GameObject carsContainer;
 
-    [SerializeField] private GameObject levelEndPage;
+    [SerializeField] private GameObject pausePanel;
+
 
     [Header("Settings component references")]
     [SerializeField] private UniversalRenderPipelineAsset urpAsset;
     [SerializeField] private AudioMixer mainMixer;
 
-    private void OnEnable()
-    {
-        LevelEnding.OnLevelEnd.AddListener(SwitchLevelEndPanel);
-    }
-    private void OnDisable()
-    {
-        LevelEnding.OnLevelEnd.RemoveListener(SwitchLevelEndPanel);
-    }
 
-    private void SwitchLevelEndPanel()
-    {
-        if (levelEndPage != null)
-            levelEndPage.SetActive(true);
-    }
 
     public void SwitchMainPage(bool enabled)
     {

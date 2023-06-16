@@ -1507,6 +1507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 529887794}
   - component: {fileID: 529887793}
+  - component: {fileID: 529887795}
   m_Layer: 0
   m_Name: GameSettings
   m_TagString: Untagged
@@ -1543,6 +1544,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &529887795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529887792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b768ef696c8b3ef43b00e65f4dc0b61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: a2d739c533a9185438428a66a6132a7b, type: 2}
 --- !u!1 &582168401
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,6 +3114,7 @@ MonoBehaviour:
   levelSelectingPage: {fileID: 734585222}
   carSelectingPage: {fileID: 1050263422}
   carsContainer: {fileID: 471744573}
+  pausePanel: {fileID: 0}
   urpAsset: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
   mainMixer: {fileID: 24100000, guid: a2d739c533a9185438428a66a6132a7b, type: 2}
 --- !u!114 &1231465015
