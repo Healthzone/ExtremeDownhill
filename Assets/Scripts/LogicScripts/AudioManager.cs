@@ -37,9 +37,16 @@ public class AudioManager : MonoBehaviour
             mainMixer.GetFloat("MainMixer", out currentVolume);
 
             if (currentVolume == 0)
+            {
                 mainMixer.SetFloat("MainMixer", -80f);
+                Debug.Log("Muting audio");
+            }
             else
+            {
                 mainMixer.SetFloat("MainMixer", 0f);
+                Debug.Log("Unmuting audio");
+
+            }
         }
     }
 
