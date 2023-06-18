@@ -5178,6 +5178,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8827942311233088025, guid: e6846f78dc4831f47823c28d38cc6224,
         type: 3}
+    - target: {fileID: 1381653613320703637, guid: 6fcf30d67ca4f014481951401d1a229f,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381653613320703637, guid: 6fcf30d67ca4f014481951401d1a229f,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.03234452
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381653613320703637, guid: 6fcf30d67ca4f014481951401d1a229f,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381653613320703637, guid: 6fcf30d67ca4f014481951401d1a229f,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381653613320703637, guid: 6fcf30d67ca4f014481951401d1a229f,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381653613320703637, guid: 6fcf30d67ca4f014481951401d1a229f,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278777088
+      objectReference: {fileID: 0}
     - target: {fileID: 4078192430053824120, guid: 6fcf30d67ca4f014481951401d1a229f,
         type: 3}
       propertyPath: mainMixer

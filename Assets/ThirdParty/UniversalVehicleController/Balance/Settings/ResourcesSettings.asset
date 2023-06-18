@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d49bc234b3af2540a9b399524703f1f, type: 3}
   m_Name: ResourcesSettings
   m_EditorClassIdentifier: 
-  PlayerControllerPrefab: {fileID: 5504477892035028159, guid: 7ba72ce2c77eafd438ccc63660f0ca1e,
+  PlayerControllerPrefab: {fileID: 4191545383346685519, guid: 7ba72ce2c77eafd438ccc63660f0ca1e,
     type: 3}
-  PlayerControllerPrefab_ForMobile: {fileID: 463986295042168686, guid: b50ca2ec3c833a74aa33c7f5052eb386,
+  PlayerControllerPrefab_ForMobile: {fileID: 4965694651644310746, guid: b50ca2ec3c833a74aa33c7f5052eb386,
     type: 3}
   UVCMainCamera: {fileID: 4455844110718311730, guid: 28d8fecb5ae6a1b45815a1e0e699dac2,
     type: 3}
