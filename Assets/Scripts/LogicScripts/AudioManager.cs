@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioMixer mainMixer;
     private void OnEnable()
     {
         LevelEnding.OnLevelEnd.AddListener(SwitchAudioVolumeMixer);
@@ -26,28 +26,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        mainMixer.SetFloat("MainMixer", 0f);
+        AudioListener.pause = false;
     }
     private void SwitchAudioVolumeMixer()
     {
-        float currentVolume;
-
-        if (mainMixer != null)
-        {
-            mainMixer.GetFloat("MainMixer", out currentVolume);
-
-            if (currentVolume == 0)
-            {
-                mainMixer.SetFloat("MainMixer", -80f);
-                Debug.Log("Muting audio");
-            }
-            else
-            {
-                mainMixer.SetFloat("MainMixer", 0f);
-                Debug.Log("Unmuting audio");
-
-            }
-        }
+        AudioListener.pause = !AudioListener.pause;
     }
 
 

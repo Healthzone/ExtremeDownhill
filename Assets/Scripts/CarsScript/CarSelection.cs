@@ -15,6 +15,7 @@ public class CarSelection : MonoBehaviour
     private void Start()
     {
         SelectCar(0);
+        PlayerLevelData.SelectedVehicle = 0;
     }
 
     private void SelectCar(int index)

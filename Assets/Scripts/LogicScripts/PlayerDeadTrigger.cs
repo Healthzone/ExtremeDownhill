@@ -7,7 +7,13 @@ using YG;
 public class PlayerDeadTrigger : MonoBehaviour
 {
     public static UnityEvent OnPlayerDead = new UnityEvent();
-    private bool isPlayerDead = false;
+    private static bool isPlayerDead = false;
+
+    public static bool IsPlayerDead { get => isPlayerDead;}
+    private void Start()
+    {
+        isPlayerDead = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

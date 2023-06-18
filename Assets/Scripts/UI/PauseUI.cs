@@ -17,13 +17,13 @@ public class PauseUI : MonoBehaviour
     [SerializeField] private AudioMixer mainMixer;
 
 
-    private bool isPaused = false;
+    private static bool isPaused = false;
     private bool isLevelEnded = false;
 
     private static PauseUI _instance;
 
     public static PauseUI Instance { get => _instance; }
-
+    public static bool IsPaused { get => isPaused;}
 
     private void OnEnable()
     {
@@ -42,11 +42,12 @@ public class PauseUI : MonoBehaviour
     private void Start()
     {
         _instance = this;
+        isPaused = false;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && !isLevelEnded)
+        if (Input.GetKeyDown(KeyCode.Tab) && !isLevelEnded && !GameStates.IsLevelLoading && !PlayerDeadTrigger.IsPlayerDead)
             if (!isPaused)
                 SetPauseGame();
             else
@@ -64,7 +65,7 @@ public class PauseUI : MonoBehaviour
 
         _instance.PauseCanvasGameObject.SetActive(true);
         _instance.pausePage.SetActive(true);
-        _instance.isPaused = true;
+        isPaused = true;
 
         OnGamePaused?.Invoke();
 

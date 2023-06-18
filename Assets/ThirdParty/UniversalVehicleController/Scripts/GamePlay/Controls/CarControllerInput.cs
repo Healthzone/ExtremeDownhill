@@ -166,7 +166,7 @@ namespace PG
         {
             if (GameController.Instance)
             {
-                if (Input.GetKeyDown (RestartLevel))
+                if (Input.GetKeyDown (RestartLevel) && !GameStates.IsLevelLoading && !PauseUI.IsPaused && !PlayerDeadTrigger.IsPlayerDead)
                 {
                     GameController.Instance.RestartScene ();
                 }

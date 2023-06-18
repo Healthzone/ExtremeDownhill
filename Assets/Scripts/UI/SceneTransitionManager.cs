@@ -34,6 +34,7 @@ public class SceneTransitionManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         //OnSceneStartLoading.Invoke();
+        GameStates.IsLevelLoading = true;
         SceneTransition.SwitchToScene("Menu");
     }
     public static void RestartCurrentLevel()

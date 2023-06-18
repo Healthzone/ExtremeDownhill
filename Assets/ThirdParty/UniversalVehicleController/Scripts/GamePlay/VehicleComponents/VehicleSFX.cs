@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PG
 {
     /// <summary>
     /// Sound effects, using FMOD.
     /// </summary>
-    public class VehicleSFX :MonoBehaviour
+    public class VehicleSFX : MonoBehaviour
     {
         [Header("VehicleSFX")]
 
@@ -46,6 +48,8 @@ namespace PG
         [Header("Other settings")]
         public AudioSource OtherEffectsSource;                                              //Source for playing other sound effects.
 
+        [SerializeField] AudioMixer mainMixer;
+        float mixerVolume;
 #pragma warning restore 0649
 
         Dictionary<GroundType, GroundSound> WheelSounds = new Dictionary<GroundType, GroundSound>();                    //Dictionary for playing multiple wheel sounds at the same time.\
@@ -58,13 +62,13 @@ namespace PG
         protected event System.Action UpdateAction;
         Dictionary<AudioClip, float> LastPlaySoundTime = new Dictionary<AudioClip, float>();
 
-        protected virtual void Start ()
+        protected virtual void Start()
         {
-            Vehicle = GetComponentInParent<VehicleController> ();
+            Vehicle = GetComponentInParent<VehicleController>();
 
             if (Vehicle == null)
             {
-                Debug.LogErrorFormat ("[{0}] VehicleSFX without VehicleController in parent", name);
+                Debug.LogErrorFormat("[{0}] VehicleSFX without VehicleController in parent", name);
                 enabled = false;
                 return;
             }
@@ -85,14 +89,14 @@ namespace PG
                         if (groundSound.IdleGroundClip == WheelsEffectSourceRef.clip)
                         {
                             groundSound.Source = WheelsEffectSourceRef;
-                            WheelSounds.Add (groundSound.GroundType, groundSound);
+                            WheelSounds.Add(groundSound.GroundType, groundSound);
                             break;
                         }
                     }
                 }
                 else
                 {
-                    WheelsEffectSourceRef.Stop ();
+                    WheelsEffectSourceRef.Stop();
                 }
 
                 UpdateAction += UpdateWheels;
@@ -100,52 +104,70 @@ namespace PG
 
             if (FrictionEffectSourceRef != null && FrictionEffectSourceRef.gameObject.activeInHierarchy)
             {
-                FrictionSounds.Add (FrictionEffectSourceRef.clip, new FrictionSoundData () { Source = FrictionEffectSourceRef, LastFrictionTime = Time.time });
-                FrictionEffectSourceRef.Stop ();
+                FrictionSounds.Add(FrictionEffectSourceRef.clip, new FrictionSoundData() { Source = FrictionEffectSourceRef, LastFrictionTime = Time.time });
+                FrictionEffectSourceRef.Stop();
 
                 UpdateAction += UpdateFrictions;
                 Vehicle.CollisionStayAction += PlayCollisionStayAction;
             }
+            mainMixer.GetFloat("VolumeMixer", out mixerVolume);
+            mixerVolume = (mixerVolume + 80) / 100;
         }
 
-        public void AddStudioListiner ()
+        private void OnEnable()
+        {
+            ED.GameSettings.OnGameSettingsChanged.AddListener(GetMixerVolume);
+        }
+
+        private void OnDisable()
+        {
+            ED.GameSettings.OnGameSettingsChanged.RemoveListener(GetMixerVolume);
+        }
+
+        private void GetMixerVolume()
+        {
+            mainMixer.GetFloat("VolumeMixer", out mixerVolume);
+            mixerVolume = (mixerVolume + 80) / 100;
+        }
+
+        public void AddStudioListiner()
         {
             if (!Vehicle)
             {
-                Vehicle = GetComponentInParent<VehicleController> ();
+                Vehicle = GetComponentInParent<VehicleController>();
             }
 
-            var studioListiner = Vehicle.GetComponent<AudioListener> ();
+            var studioListiner = Vehicle.GetComponent<AudioListener>();
 
             if (!studioListiner)
             {
-                studioListiner = Vehicle.gameObject.AddComponent<AudioListener> ();
+                studioListiner = Vehicle.gameObject.AddComponent<AudioListener>();
             }
 
             studioListiner.enabled = true;
         }
 
-        public void RemoveStudioListiner ()
+        public void RemoveStudioListiner()
         {
             if (!Vehicle)
             {
-                Vehicle = GetComponentInParent<VehicleController> ();
+                Vehicle = GetComponentInParent<VehicleController>();
             }
 
-            var studioListiner = Vehicle.GetComponent<AudioListener> ();
+            var studioListiner = Vehicle.GetComponent<AudioListener>();
 
             if (studioListiner)
             {
-                Destroy (studioListiner);
+                Destroy(studioListiner);
             }
         }
 
-        protected virtual void Update ()
+        protected virtual void Update()
         {
-            UpdateAction.SafeInvoke ();
+            UpdateAction.SafeInvoke();
         }
 
-        private void FixedUpdate ()
+        private void FixedUpdate()
         {
             if (Time.timeSinceLevelLoad < 0.5f || !HighSuspensionClip && !MediumSuspensionClip && !LowSuspensionClip)   //Time.timeSinceLevelLoad < 1f to delay logic on startup
             {
@@ -171,37 +193,42 @@ namespace PG
 
             if (suspensionForce >= HighSuspensionForce && HighSuspensionClip)
             {
-                if (!LastPlaySoundTime.TryGetValue (HighSuspensionClip, out lastPlayTime) || lastPlayTime < Time.timeSinceLevelLoad - MinTimeBetweenSuspensionSounds)
+                if (!LastPlaySoundTime.TryGetValue(HighSuspensionClip, out lastPlayTime) || lastPlayTime < Time.timeSinceLevelLoad - MinTimeBetweenSuspensionSounds)
                 {
-                    OtherEffectsSource.PlayOneShot (HighSuspensionClip, (suspensionForce + 0.4f).Clamp ());
+                    float volume = (suspensionForce + 0.4f).Clamp();
+                    OtherEffectsSource.clip = HighSuspensionClip;
+                    OtherEffectsSource.volume = volume;
+                    OtherEffectsSource.Play();
+
+                    //OtherEffectsSource.PlayOneShot (HighSuspensionClip, (suspensionForce + 0.4f).Clamp());
                     LastPlaySoundTime[HighSuspensionClip] = Time.timeSinceLevelLoad;
                 }
             }
             else if (suspensionForce >= MediumSuspensionForce && MediumSuspensionClip)
             {
-                if (!LastPlaySoundTime.TryGetValue (MediumSuspensionClip, out lastPlayTime) || lastPlayTime < Time.timeSinceLevelLoad - MinTimeBetweenSuspensionSounds)
+                if (!LastPlaySoundTime.TryGetValue(MediumSuspensionClip, out lastPlayTime) || lastPlayTime < Time.timeSinceLevelLoad - MinTimeBetweenSuspensionSounds)
                 {
-                    OtherEffectsSource.PlayOneShot (MediumSuspensionClip, (suspensionForce + 0.4f).Clamp ());
+                    OtherEffectsSource.PlayOneShot(MediumSuspensionClip, (suspensionForce + 0.4f).Clamp());
                     LastPlaySoundTime[MediumSuspensionClip] = Time.timeSinceLevelLoad;
                 }
             }
             else if (suspensionForce >= LowSuspensionForce && LowSuspensionClip)
             {
-                if (!LastPlaySoundTime.TryGetValue (LowSuspensionClip, out lastPlayTime) || lastPlayTime < Time.timeSinceLevelLoad - MinTimeBetweenSuspensionSounds)
+                if (!LastPlaySoundTime.TryGetValue(LowSuspensionClip, out lastPlayTime) || lastPlayTime < Time.timeSinceLevelLoad - MinTimeBetweenSuspensionSounds)
                 {
-                    OtherEffectsSource.PlayOneShot (LowSuspensionClip, (suspensionForce + 0.4f).Clamp ());
+                    OtherEffectsSource.PlayOneShot(LowSuspensionClip, (suspensionForce + 0.4f).Clamp());
                     LastPlaySoundTime[LowSuspensionClip] = Time.timeSinceLevelLoad;
                 }
             }
         }
 
-        private void OnDestroy ()
+        private void OnDestroy()
         {
             foreach (var soundKV in WheelSounds)
             {
                 if (soundKV.Value.Source)
                 {
-                    soundKV.Value.Source.Stop ();
+                    soundKV.Value.Source.Stop();
                 }
             }
 
@@ -209,12 +236,12 @@ namespace PG
             {
                 if (soundKV.Value.Source)
                 {
-                    soundKV.Value.Source.Stop ();
+                    soundKV.Value.Source.Stop();
                 }
             }
         }
 
-        void UpdateWheels ()
+        void UpdateWheels()
         {
             //Wheels sounds logic.
             //Find the sound for each wheel.
@@ -227,11 +254,12 @@ namespace PG
 
                 GroundSound sound = null;
 
-                if (!WheelSounds.TryGetValue (wheel.CurrentGroundConfig.GroundType, out sound))
+                if (!WheelSounds.TryGetValue(wheel.CurrentGroundConfig.GroundType, out sound))
                 {
                     var source = WheelsEffectSourceRef.gameObject.AddComponent<AudioSource>();
                     source.playOnAwake = WheelsEffectSourceRef.playOnAwake;
                     source.spatialBlend = WheelsEffectSourceRef.spatialBlend;
+                    source.outputAudioMixerGroup = mainMixer.FindMatchingGroups("Master")[0];
 
                     for (int i = 0; i < GroundSounds.Count; i++)
                     {
@@ -247,10 +275,10 @@ namespace PG
                         sound = GroundSounds[0];
                     }
 
-                    source.Stop ();
+                    source.Stop();
                     source.volume = 0;
                     sound.Source = source;
-                    WheelSounds.Add (wheel.CurrentGroundConfig.GroundType, sound);
+                    WheelSounds.Add(wheel.CurrentGroundConfig.GroundType, sound);
                 }
 
                 sound.WheelsCount++;
@@ -272,12 +300,12 @@ namespace PG
                 if (sound.Value.Slip >= 0.9f)
                 {
                     clip = sound.Value.SlipGroundClip;
-                    targetVolume = (sound.Value.Slip - 0.5f).Clamp ();
+                    targetVolume = (sound.Value.Slip - 0.5f).Clamp();
                 }
                 else
                 {
                     clip = sound.Value.IdleGroundClip;
-                    targetVolume = (Vehicle.CurrentSpeed / 30).Clamp ();
+                    targetVolume = (Vehicle.CurrentSpeed / 30).Clamp();
                 }
 
                 if (sound.Value.Source.clip != clip && clip != null)
@@ -291,24 +319,24 @@ namespace PG
                 }
 
                 //Passing parameters to sources.
-                sound.Value.Source.volume = Mathf.Lerp (sound.Value.Source.volume, targetVolume, 10 * Time.deltaTime);
-                sound.Value.Source.pitch = Mathf.Lerp (0.7f, 1.2f, sound.Value.Source.volume);
+                sound.Value.Source.volume = Mathf.Lerp(sound.Value.Source.volume, targetVolume, 10 * Time.deltaTime);
+                sound.Value.Source.pitch = Mathf.Lerp(0.7f, 1.2f, sound.Value.Source.volume);
 
                 sound.Value.Slip = 0;
                 sound.Value.WheelsCount = 0;
 
-                if (Mathf.Approximately (0, sound.Value.Source.volume) && sound.Value.Source.isPlaying)
+                if (Mathf.Approximately(0, sound.Value.Source.volume) && sound.Value.Source.isPlaying)
                 {
-                    sound.Value.Source.Stop ();
+                    sound.Value.Source.Stop();
                 }
-                else if (!Mathf.Approximately (0, sound.Value.Source.volume) && !sound.Value.Source.isPlaying)
+                else if (!Mathf.Approximately(0, sound.Value.Source.volume) && !sound.Value.Source.isPlaying)
                 {
-                    sound.Value.Source.Play ();
+                    sound.Value.Source.Play();
                 }
             }
         }
 
-        void UpdateFrictions ()
+        void UpdateFrictions()
         {
             FrictionSoundData soundData;
             var speedNormalized = (Vehicle.CurrentSpeed / 30).Clamp();
@@ -324,11 +352,11 @@ namespace PG
                     {
                         sound.Value.Source.pitch = 0;
                         sound.Value.Source.volume = 0;
-                        soundData.Source.Stop ();
+                        soundData.Source.Stop();
                     }
                     else
                     {
-                        sound.Value.Source.pitch = Mathf.Lerp (0.4f, 1.2f, speedNormalized);
+                        sound.Value.Source.pitch = Mathf.Lerp(0.4f, 1.2f, speedNormalized);
                         soundData.Source.volume = speedNormalized * (1 - (time / soundData.LastFrictionTime));
                     }
                 }
@@ -340,18 +368,18 @@ namespace PG
         /// <summary>
         /// Play collision stay sound.
         /// </summary>
-        public void PlayCollisionStayAction (VehicleController vehicle, Collision collision)
+        public void PlayCollisionStayAction(VehicleController vehicle, Collision collision)
         {
             if (Vehicle.CurrentSpeed >= 1 && (collision.rigidbody == null || (collision.rigidbody.velocity - vehicle.RB.velocity).sqrMagnitude > 25))
             {
-                PlayFrictionSound (collision, collision.relativeVelocity.magnitude);
+                PlayFrictionSound(collision, collision.relativeVelocity.magnitude);
             }
         }
 
         /// <summary>
         /// Play collision sound.
         /// </summary>
-        public void PlayCollisionSound (VehicleController vehicle, Collision collision)
+        public void PlayCollisionSound(VehicleController vehicle, Collision collision)
         {
             if (!vehicle.VehicleIsVisible || collision == null)
                 return;
@@ -375,32 +403,37 @@ namespace PG
             }
             float magnitudeDivider;
 
-            var audioClip = GetClipForCollision (collisionLayer, collisionMagnitude, out magnitudeDivider);
+            var audioClip = GetClipForCollision(collisionLayer, collisionMagnitude, out magnitudeDivider);
 
-            var volume = Mathf.Clamp01 (collisionMagnitude / magnitudeDivider.Clamp(0, 40));
+            var volume = Mathf.Clamp01(collisionMagnitude / magnitudeDivider.Clamp(0, 40));
 
-            OtherEffectsSource.PlayOneShot (audioClip, volume);
+            OtherEffectsSource.clip = audioClip;
+            OtherEffectsSource.volume = 1;
+            OtherEffectsSource.Play();
+
+            //OtherEffectsSource.PlayOneShot (audioClip, 1f);
         }
 
-        void PlayFrictionSound (Collision collision, float magnitude)
+        void PlayFrictionSound(Collision collision, float magnitude)
         {
             if (Vehicle.CurrentSpeed >= 1)
             {
-                CurrentFrictionClip = GetClipForFriction (collision.collider.gameObject.layer, magnitude);
+                CurrentFrictionClip = GetClipForFriction(collision.collider.gameObject.layer, magnitude);
 
                 FrictionSoundData soundData;
-                if (!FrictionSounds.TryGetValue (CurrentFrictionClip, out soundData))
+                if (!FrictionSounds.TryGetValue(CurrentFrictionClip, out soundData))
                 {
                     var source = FrictionEffectSourceRef.gameObject.AddComponent<AudioSource>();
                     source.clip = CurrentFrictionClip;
+                    source.outputAudioMixerGroup = mainMixer.FindMatchingGroups("Master")[0];
 
-                    soundData = new FrictionSoundData () { Source = source };
-                    FrictionSounds.Add (CurrentFrictionClip, soundData);
+                    soundData = new FrictionSoundData() { Source = source };
+                    FrictionSounds.Add(CurrentFrictionClip, soundData);
                 }
 
                 if (!soundData.Source.isPlaying)
                 {
-                    soundData.Source.Play ();
+                    soundData.Source.Play();
                 }
 
                 soundData.LastFrictionTime = Time.time;
@@ -413,11 +446,11 @@ namespace PG
         /// <param name="layer">Collision layer.</param>
         /// <param name="collisionMagnitude">Collision magnitude.</param>
         /// <param name="magnitudeDivider">Divider to calculate collision volume.</param>
-        AudioClip GetClipForCollision (int layer, float collisionMagnitude, out float magnitudeDivider)
+        AudioClip GetClipForCollision(int layer, float collisionMagnitude, out float magnitudeDivider)
         {
             for (int i = 0; i < CollisionEvents.Count; i++)
             {
-                if (CollisionEvents[i].CollisionMask.LayerInMask (layer) && collisionMagnitude >= CollisionEvents[i].MinMagnitudeCollision && collisionMagnitude < CollisionEvents[i].MaxMagnitudeCollision)
+                if (CollisionEvents[i].CollisionMask.LayerInMask(layer) && collisionMagnitude >= CollisionEvents[i].MinMagnitudeCollision && collisionMagnitude < CollisionEvents[i].MaxMagnitudeCollision)
                 {
                     if (CollisionEvents[i].MaxMagnitudeCollision == float.PositiveInfinity)
                     {
@@ -441,11 +474,11 @@ namespace PG
         /// </summary>
         /// <param name="layer">Collision layer.</param>
         /// <param name="collisionMagnitude">Collision magnitude.</param>
-        AudioClip GetClipForFriction (int layer, float collisionMagnitude)
+        AudioClip GetClipForFriction(int layer, float collisionMagnitude)
         {
             for (int i = 0; i < FrictionEvents.Count; i++)
             {
-                if (FrictionEvents[i].CollisionMask.LayerInMask (layer) && collisionMagnitude >= FrictionEvents[i].MinMagnitudeCollision && collisionMagnitude < FrictionEvents[i].MaxMagnitudeCollision)
+                if (FrictionEvents[i].CollisionMask.LayerInMask(layer) && collisionMagnitude >= FrictionEvents[i].MinMagnitudeCollision && collisionMagnitude < FrictionEvents[i].MaxMagnitudeCollision)
                 {
                     return FrictionEvents[i].AudioClip;
                 }
@@ -458,39 +491,48 @@ namespace PG
         float MediumLastPlayTime;
         float HardLastPlayTime;
 
-        public void PlayGlassShards (GlassShardsType shardsType, Vector3 position)
+        public void PlayGlassShards(GlassShardsType shardsType, Vector3 position)
         {
             switch (shardsType)
             {
                 case GlassShardsType.Easy:
-                {
-                    if (Time.realtimeSinceStartup - EasyLastPlayTime > 0.5f)
                     {
-                        AudioSource.PlayClipAtPoint (EasyShardsClip, position);
-                        EasyLastPlayTime = Time.realtimeSinceStartup;
+                        if (Time.realtimeSinceStartup - EasyLastPlayTime > 0.5f)
+                        {
+                            OtherEffectsSource.clip = EasyShardsClip;
+                            OtherEffectsSource.volume = 1f;
+                            OtherEffectsSource.Play();
+                            //AudioSource.PlayClipAtPoint(EasyShardsClip, position, mixerVolume);
+                            EasyLastPlayTime = Time.realtimeSinceStartup;
+                        }
                     }
-                }
-                break;
+                    break;
                 case GlassShardsType.Medium:
-                {
-                    if (Time.realtimeSinceStartup - MediumLastPlayTime > 0.5f)
                     {
-                        AudioSource.PlayClipAtPoint (MediumShardsClip, position);
-                        MediumLastPlayTime = Time.realtimeSinceStartup;
+                        if (Time.realtimeSinceStartup - MediumLastPlayTime > 0.5f)
+                        {
+                            OtherEffectsSource.clip = MediumShardsClip;
+                            OtherEffectsSource.volume = 1f;
+                            OtherEffectsSource.Play();
+                            // AudioSource.PlayClipAtPoint (MediumShardsClip, position, mixerVolume);
+                            MediumLastPlayTime = Time.realtimeSinceStartup;
+                        }
                     }
-                }
-                break;
+                    break;
                 case GlassShardsType.Hard:
-                {
-                    if (Time.realtimeSinceStartup - HardLastPlayTime > 0.5f)
                     {
-                        AudioSource.PlayClipAtPoint (HardShardsClip, position);
-                        HardLastPlayTime = Time.realtimeSinceStartup;
+                        if (Time.realtimeSinceStartup - HardLastPlayTime > 0.5f)
+                        {
+                            OtherEffectsSource.clip = HardShardsClip;
+                            OtherEffectsSource.volume = 1f;
+                            OtherEffectsSource.Play();
+                            //AudioSource.PlayClipAtPoint (HardShardsClip, position);
+                            HardLastPlayTime = Time.realtimeSinceStartup;
+                        }
                     }
-                }
-                break;
+                    break;
             }
-            
+
         }
 
         #endregion //Collisions
