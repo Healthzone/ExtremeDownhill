@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingProgressBar: {fileID: 7419171653238695349}
   loadingPanel: {fileID: 7419171653248162922}
-  waitDelay: 1
+  waitDelay: 2.5
 --- !u!1001 &4276074657093847099
 PrefabInstance:
   m_ObjectHideFlags: 0

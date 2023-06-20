@@ -5529,7 +5529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c832165d4298a49bdfeb948ea1a04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 300
   MaxDamage: Infinity
 --- !u!1 &1400545100858285609
 GameObject:

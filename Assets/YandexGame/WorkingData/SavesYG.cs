@@ -11,11 +11,11 @@ namespace YG
         public bool promptDone;
 
 
-        public float volumePc = -10f;
+        public float volumePc = -15f;
         public float renderScalePc = 1.0f;
 
-        public float volumePhone = -10f;
-        public float renderScalePhone = 0.75f;
+        public float volumePhone = -15f;
+        public float renderScalePhone = 0.70f;
 
         public int unlockedLastLevel = 1;
         // Ваши сохранения

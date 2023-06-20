@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c832165d4298a49bdfeb948ea1a04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 300
   MaxDamage: Infinity
 --- !u!1 &646796445173663324
 GameObject:
@@ -470,7 +470,7 @@ MonoBehaviour:
     TurboDecreaseSpeed: 10
     TurboAdditionalTorque: 0.3
     EnableBoost: 1
-    BoostAmount: 6
+    BoostAmount: 10
     BoostAdditionalPower: 1
     ProbabilityBackfire: 0.5
     RPMToNextGear: 6400
@@ -114386,16 +114386,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3794801314533829893}
     m_Modifications:
-    - target: {fileID: 724320323333057328, guid: 06bc12dcdbddc4f49b5b3425451bdcf1,
-        type: 3}
-      propertyPath: CollisionEvents.Array.data[0].MaxMagnitudeCollision
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 724320323333057328, guid: 06bc12dcdbddc4f49b5b3425451bdcf1,
-        type: 3}
-      propertyPath: CollisionEvents.Array.data[1].MinMagnitudeCollision
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 724320323333057329, guid: 06bc12dcdbddc4f49b5b3425451bdcf1,
         type: 3}
       propertyPath: m_RootOrder

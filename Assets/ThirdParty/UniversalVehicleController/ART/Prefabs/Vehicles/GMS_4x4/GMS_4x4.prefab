@@ -5445,7 +5445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c832165d4298a49bdfeb948ea1a04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 300
   MaxDamage: Infinity
 --- !u!1 &710158143540107951
 GameObject:
@@ -104384,7 +104384,7 @@ MonoBehaviour:
     TurboDecreaseSpeed: 10
     TurboAdditionalTorque: 0.2
     EnableBoost: 1
-    BoostAmount: 30
+    BoostAmount: 10
     BoostAdditionalPower: 1
     ProbabilityBackfire: 0.3
     RPMToNextGear: 6500

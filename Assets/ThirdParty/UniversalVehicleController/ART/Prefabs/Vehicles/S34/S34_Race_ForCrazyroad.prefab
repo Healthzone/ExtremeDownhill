@@ -57870,7 +57870,7 @@ MonoBehaviour:
     TurboDecreaseSpeed: 10
     TurboAdditionalTorque: 0.3
     EnableBoost: 1
-    BoostAmount: 5
+    BoostAmount: 10
     BoostAdditionalPower: 1
     ProbabilityBackfire: 0.5
     RPMToNextGear: 6400
@@ -93929,7 +93929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c832165d4298a49bdfeb948ea1a04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 150
+  Health: 300
   MaxDamage: Infinity
 --- !u!1 &8857955354250392179
 GameObject:

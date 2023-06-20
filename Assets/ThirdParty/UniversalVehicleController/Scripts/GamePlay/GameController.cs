@@ -110,6 +110,7 @@ namespace PG
         public void RestartScene()
         {
             SceneTransitionManager.RestartCurrentLevel();
+            AllCars.First().GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
