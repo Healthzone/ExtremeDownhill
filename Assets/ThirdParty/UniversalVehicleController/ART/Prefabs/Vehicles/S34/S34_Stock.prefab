@@ -10809,16 +10809,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
-  MaxBrakeTorque: 3000
+  MaxBrakeTorque: 9000
   HandBrakeWheel: 1
   WheelView: {fileID: 1216030270604014112}
   WheelHub: {fileID: 9051316914682410760}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.5
+  AntiRollBar: 0.9
   AntiRollWheel: {fileID: 1585125624496461622}
   MaxSuspensionWheelAngle: 5
   DependentSuspension: 1
@@ -15873,20 +15873,20 @@ MonoBehaviour:
     CutOffRPM: 6600
     TargetCutOffRPM: 6000
     CutOffTime: 0.05
-    EnableTurbo: 0
+    EnableTurbo: 1
     TurboIncreaseSpeed: 3
     TurboDecreaseSpeed: 10
-    TurboAdditionalTorque: 0.2
+    TurboAdditionalTorque: 0.3
     EnableBoost: 1
     BoostAmount: 10
-    BoostAdditionalPower: 1
+    BoostAdditionalPower: 3
     ProbabilityBackfire: 0
-    RPMToNextGear: 6500
-    RPMToPrevGearDiff: 1000
+    RPMToNextGear: 6300
+    RPMToPrevGearDiff: 700
   EngineDamageableObject: {fileID: 799909754206431888}
   Steer:
     MaxSteerAngle: 40
-    EnableSteerLimit: 1
+    EnableSteerLimit: 0
     SteerLimitCurve:
       serializedVersion: 2
       m_Curve:
@@ -16030,7 +16030,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     MaxSpeedForMaxAngularHelp: 20
     DriftLimitAngle: 0
-    ABS: 1
+    ABS: 0.5
     TCS: 0
   Gearbox:
     ChangeUpGearTime: 0.3
@@ -16042,7 +16042,7 @@ MonoBehaviour:
     - 1.3
     - 1.05
     - 0.85
-    MainRatio: 4.5
+    MainRatio: 4
     HasRGear: 1
     ReversGearRatio: 3.59
 --- !u!114 &5850819867568113512
@@ -16329,16 +16329,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
-  MaxBrakeTorque: 3000
+  MaxBrakeTorque: 9000
   HandBrakeWheel: 1
   WheelView: {fileID: 1111101596049745327}
   WheelHub: {fileID: 302930187321473786}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.5
+  AntiRollBar: 0.9
   AntiRollWheel: {fileID: 6460373089404581034}
   MaxSuspensionWheelAngle: 5
   DependentSuspension: 1
@@ -47357,16 +47357,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 3000
+  MaxBrakeTorque: 9000
   HandBrakeWheel: 0
   WheelView: {fileID: 502545702947450011}
   WheelHub: {fileID: 8799354343135817272}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.5
+  AntiRollBar: 0.9
   AntiRollWheel: {fileID: 4338982303253886191}
   MaxSuspensionWheelAngle: 5
   DependentSuspension: 0
@@ -103836,16 +103836,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 3000
+  MaxBrakeTorque: 9000
   HandBrakeWheel: 0
   WheelView: {fileID: 4979627406195621320}
   WheelHub: {fileID: 751625136594882911}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.5
+  AntiRollBar: 0.9
   AntiRollWheel: {fileID: 7252696516295554410}
   MaxSuspensionWheelAngle: 5
   DependentSuspension: 0

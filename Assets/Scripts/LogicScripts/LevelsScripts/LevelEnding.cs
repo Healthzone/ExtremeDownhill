@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using YG;
 
 public class LevelEnding : MonoBehaviour
@@ -19,8 +21,12 @@ public class LevelEnding : MonoBehaviour
             Debug.Log("LevelEnded");
             isLevelEnded = true;
 
-            YandexGame.savesData.unlockedLastLevel++;
-            YandexGame.SaveProgress();
+            if (Convert.ToInt32(SceneManager.GetActiveScene().name) == YandexGame.savesData.unlockedLastLevel)
+            {
+                YandexGame.savesData.unlockedLastLevel++;
+                YandexGame.SaveProgress();
+                Debug.Log($"Level {YandexGame.savesData.unlockedLastLevel} unlocked");
+            }
             OnLevelEnd.Invoke();
         }
     }

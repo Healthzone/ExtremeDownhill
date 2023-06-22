@@ -11134,7 +11134,7 @@ MonoBehaviour:
     EnableBoost: 1
     BoostAmount: 10
     BoostAdditionalPower: 1
-    ProbabilityBackfire: 0.3
+    ProbabilityBackfire: 0.2
     RPMToNextGear: 6500
     RPMToPrevGearDiff: 500
   EngineDamageableObject: {fileID: 8409064148514769247}

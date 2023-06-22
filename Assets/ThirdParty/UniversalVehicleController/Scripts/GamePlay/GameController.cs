@@ -114,27 +114,27 @@ namespace PG
         }
     }
 
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
 
-//    [CustomEditor(typeof(GameController))]
-//    public class GameControllerEditor : Editor
-//    {
-//        public override void OnInspectorGUI()
-//        {
-//            base.OnInspectorGUI();
-//            if ((target as GameController).m_SplitScreen)
-//            {
-//                if (!SoundHelper.SoundSupportSplitScreen)
-//                {
-//                    EditorGUILayout.HelpBox("Current SoundSystem does not support split screen. \nPlease Install the FMOD dependency (The documentation describes how to do this).", MessageType.Error);
-//                }
-//                if (!InputHelper.InputSupportSplitScreen)
-//                {
-//                    EditorGUILayout.HelpBox("Current InputSystem (Old input system) does not support split screen. \nPlease Install the NewInputSystem dependency (The documentation describes how to do this).", MessageType.Error);
-//                }
-//            }
-//        }
-//    }
+    [CustomEditor(typeof(GameController))]
+    public class GameControllerEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+            if ((target as GameController).m_SplitScreen)
+            {
+                if (!SoundHelper.SoundSupportSplitScreen)
+                {
+                    EditorGUILayout.HelpBox("Current SoundSystem does not support split screen. \nPlease Install the FMOD dependency (The documentation describes how to do this).", MessageType.Error);
+                }
+                if (!InputHelper.InputSupportSplitScreen)
+                {
+                    EditorGUILayout.HelpBox("Current InputSystem (Old input system) does not support split screen. \nPlease Install the NewInputSystem dependency (The documentation describes how to do this).", MessageType.Error);
+                }
+            }
+        }
+    }
 
-//#endif
+#endif
 }

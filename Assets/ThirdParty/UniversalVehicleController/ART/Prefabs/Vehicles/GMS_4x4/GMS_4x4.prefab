@@ -66760,7 +66760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 1
@@ -77841,7 +77841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 1
@@ -83223,7 +83223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
@@ -88680,7 +88680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 80
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
@@ -104386,7 +104386,7 @@ MonoBehaviour:
     EnableBoost: 1
     BoostAmount: 10
     BoostAdditionalPower: 1
-    ProbabilityBackfire: 0.3
+    ProbabilityBackfire: 0.1
     RPMToNextGear: 6500
     RPMToPrevGearDiff: 1000
   EngineDamageableObject: {fileID: 1431339030539263067}
