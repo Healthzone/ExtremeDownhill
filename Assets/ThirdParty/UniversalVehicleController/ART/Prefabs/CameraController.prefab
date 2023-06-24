@@ -326,7 +326,7 @@ MonoBehaviour:
     MaxVerticalAngle: 40
     SetRotationSpeed: 10
     AdditionalRotationMultiplier: 0.5
-    StandardFOV: 60
+    StandardFOV: 75
     BoostFOV: 90
     SpeedFOVOffset: 30
     ChangeFovSpeed: 2

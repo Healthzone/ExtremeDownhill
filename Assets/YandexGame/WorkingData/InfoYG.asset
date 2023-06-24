@@ -120,7 +120,7 @@ MonoBehaviour:
     hi: 
   debug: 1
   archivingBuild: 0
-  bakcgroundImage: 2
+  bakcgroundImage: 3
   pixelRatioEnable: 0
   pixelRatioValue: 1
   SDKStartDelay: 0
