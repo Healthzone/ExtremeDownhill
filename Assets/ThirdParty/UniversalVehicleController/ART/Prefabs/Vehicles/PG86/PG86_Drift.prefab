@@ -11485,7 +11485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 110
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
@@ -98086,7 +98086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 110
   MaxDamage: Infinity
   SteerPercent: 0
   DriveWheel: 1
@@ -103778,7 +103778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 110
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 0
@@ -103877,7 +103877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfdb2e9b4ffdb49a4ad4815bc2a5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 110
   MaxDamage: Infinity
   SteerPercent: 1
   DriveWheel: 0

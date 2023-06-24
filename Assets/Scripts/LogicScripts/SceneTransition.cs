@@ -16,7 +16,7 @@ public class SceneTransition : MonoBehaviour
 
     public static void SwitchToScene(string sceneName)
     {
-        Debug.Log("Loading Scene: " + sceneName);
+        Debug.Log("Loading level: " + sceneName);
         _instance.loadSceneOperation = SceneManager.LoadSceneAsync(sceneName);
          _instance.loadSceneOperation.allowSceneActivation = false;
         _instance.loadingPanel.SetActive(true);
