@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38967854, g: 0.40449202, b: 0.43874213, a: 1}
+  m_IndirectSpecularColor: {r: 0.38817486, g: 0.4031271, b: 0.43764448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4356,6 +4356,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 430822278175078192, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077799502045931657, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077799502045931657, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077799502045931657, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1418764475423869398, guid: d9a49df27fd349243b4bd0fd50e34769,
         type: 3}
       propertyPath: m_Name
@@ -4370,6 +4390,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UnpauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893128014067179500, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893128014067179500, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3433931349442416644, guid: d9a49df27fd349243b4bd0fd50e34769,
         type: 3}
@@ -4424,6 +4454,56 @@ PrefabInstance:
     - target: {fileID: 3433931349442416644, guid: d9a49df27fd349243b4bd0fd50e34769,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055730737210582127, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473075441320017435, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473075441320017435, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473075441320017435, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790311329178075429, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790311329178075429, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -190
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752652422458223805, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865025281108879543, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865025281108879543, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130605573275496931, guid: d9a49df27fd349243b4bd0fd50e34769,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -12,6 +12,7 @@ public class SettingsUI : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Slider renderScaleSlider;
+    [SerializeField] private Toggle anitAliasingToggle;
 
 
     [SerializeField] private TextMeshProUGUI volumeValueLabel;
@@ -26,6 +27,7 @@ public class SettingsUI : MonoBehaviour
     {
         volumeSlider.onValueChanged.AddListener(OnVolumeSliderChanged);
         renderScaleSlider.onValueChanged.AddListener(OnRenderScaleSliderChanged);
+        anitAliasingToggle.onValueChanged.AddListener(OnAntiAliasingToggleChanged);
     }
 
     private void OnDisable()
@@ -48,6 +50,19 @@ public class SettingsUI : MonoBehaviour
 
         renderScaleSlider.value = urpAsset.renderScale;
         renderScaleLabel.text = (int)(urpAsset.renderScale * 100) + " %";
+
+        if (YandexGame.SDKEnabled)
+        {
+            if (Application.isMobilePlatform)
+            {
+                anitAliasingToggle.isOn = YandexGame.savesData.antiAliasingPhone;
+
+            }
+            else
+            {
+                anitAliasingToggle.isOn = YandexGame.savesData.antiAliasingPC;
+            }
+        }
     }
 
     private void OnVolumeSliderChanged(float value)
@@ -59,5 +74,26 @@ public class SettingsUI : MonoBehaviour
     {
         urpAsset.renderScale = value;
         renderScaleLabel.text = MathF.Round(value * 100) + " %";
+    }
+
+    private void OnAntiAliasingToggleChanged(bool value)
+    {
+        if (Application.isMobilePlatform)
+        {
+            if (value)
+                urpAsset.msaaSampleCount = 2;
+            else
+                urpAsset.msaaSampleCount = 1;
+            YandexGame.savesData.antiAliasingPhone = value;
+
+        }
+        else
+        {
+            if (value)
+                urpAsset.msaaSampleCount = 2;
+            else
+                urpAsset.msaaSampleCount = 1;
+            YandexGame.savesData.antiAliasingPC = value;
+        }
     }
 }

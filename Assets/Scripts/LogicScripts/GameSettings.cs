@@ -33,11 +33,19 @@ namespace ED
             {
                 mainMixer.SetFloat("VolumeMixer", YandexGame.savesData.volumePhone);
                 urpAsset.renderScale = YandexGame.savesData.renderScalePhone;
+                if (YandexGame.savesData.antiAliasingPhone)
+                    urpAsset.msaaSampleCount = 2;
+                else
+                    urpAsset.msaaSampleCount = 1;
             }
             else
             {
                 mainMixer.SetFloat("VolumeMixer", YandexGame.savesData.volumePc);
                 urpAsset.renderScale = YandexGame.savesData.renderScalePc;
+                if (YandexGame.savesData.antiAliasingPC)
+                    urpAsset.msaaSampleCount = 2;
+                else
+                    urpAsset.msaaSampleCount = 1;
             }
         }
 
@@ -47,17 +55,19 @@ namespace ED
                 InitSettings();
         }
 
-        public static void SaveSettingsData(float volume, float renderScale)
+        public static void SaveSettingsData(float volume, float renderScale, bool antiAliasingEnable)
         {
             if (Application.isMobilePlatform)
             {
                 YandexGame.savesData.volumePhone = volume;
                 YandexGame.savesData.renderScalePhone = renderScale;
+                YandexGame.savesData.antiAliasingPhone = antiAliasingEnable;
             }
             else
             {
                 YandexGame.savesData.renderScalePc = renderScale;
                 YandexGame.savesData.volumePc = volume;
+                YandexGame.savesData.antiAliasingPC = antiAliasingEnable;
             }
             YandexGame.SaveProgress();
             OnGameSettingsChanged.Invoke();

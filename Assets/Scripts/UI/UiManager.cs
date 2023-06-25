@@ -2,12 +2,14 @@ using ED;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainPage;
     [SerializeField] private GameObject settingsPage;
     [SerializeField] private GameObject levelSelectingPage;
+    [SerializeField] private GameObject controlsPage;
 
     [SerializeField] private GameObject carSelectingPage;
     [SerializeField] private GameObject carsContainer;
@@ -38,7 +40,9 @@ public class UiManager : MonoBehaviour
                 float volume;
                 mainMixer.GetFloat("VolumeMixer", out volume);
 
-                GameSettings.SaveSettingsData(volume, urpAsset.renderScale);
+                bool antiAliasingEnable = urpAsset.msaaSampleCount == 1 ? false : true;
+
+                GameSettings.SaveSettingsData(volume, urpAsset.renderScale, antiAliasingEnable);
             }
         }
     }
@@ -57,5 +61,11 @@ public class UiManager : MonoBehaviour
             carSelectingPage.SetActive(enabled);
         }
 
+    }
+
+    public void SwitchControlsPage(bool enabled)
+    {
+        if (controlsPage != null)
+            controlsPage.SetActive(enabled);
     }
 }

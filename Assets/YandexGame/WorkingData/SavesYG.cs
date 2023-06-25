@@ -17,6 +17,9 @@ namespace YG
         public float volumePhone = -15f;
         public float renderScalePhone = 0.70f;
 
+        public bool antiAliasingPC = true;
+        public bool antiAliasingPhone = false;
+
         public int unlockedLastLevel = 1;
         // Ваши сохранения
 
