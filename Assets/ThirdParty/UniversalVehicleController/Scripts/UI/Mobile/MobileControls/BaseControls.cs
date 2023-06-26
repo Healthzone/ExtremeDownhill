@@ -7,7 +7,8 @@ namespace PG.UI
     public class BaseControls :MonoBehaviour
     {
         public CarControllerInput UserInput { get; set; }
-        public string Name;
+        public string RuName;
+        public string EnName;
 
         public virtual void Init (CarControllerInput userInput)
         {

@@ -47,7 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingProgressBar: {fileID: 7419171653238695349}
   loadingPanel: {fileID: 7419171653248162922}
-  waitDelay: 1.5
+  waitDelay: 2
+  waitDelayBeforeAds: 1
+  waitDelayAfterAds: 1
 --- !u!1001 &4276074657093847099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,7 +181,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6746843530474111190, guid: 94d2a466557c0ad49abc72e71ab86933,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1735086511549784111}
   m_SourcePrefab: {fileID: 100100000, guid: 94d2a466557c0ad49abc72e71ab86933, type: 3}
 --- !u!114 &7419171653238695349 stripped
 MonoBehaviour:
@@ -205,3 +211,58 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4276074657093847099}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7419171653326489837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6746843530474111190, guid: 94d2a466557c0ad49abc72e71ab86933,
+    type: 3}
+  m_PrefabInstance: {fileID: 4276074657093847099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1735086511549784111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7419171653326489837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u0417\u0410\u0413\u0420\u0423\u0417\u041A\u0410..."
+  en: LOADING...
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 0
+  countLang: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using YG;
 
 namespace PG.UI
 {
@@ -79,12 +80,12 @@ namespace PG.UI
             SelectedIndex = PlayerPrefs.GetInt("MobileControlsIndex", 0);
             SelectControl(SelectedIndex);
 
-            
+
             if (ChangeViewBtn)
             {
                 ChangeViewBtn.onClick.AddListener(() => UserInput.ChangeView());
             }
-            
+
             if (RestartSceneBtn)
             {
                 RestartSceneBtn.onClick.AddListener(() => GameController.Instance.RestartScene());
@@ -116,7 +117,10 @@ namespace PG.UI
                 AllControls[i].SetActive(index == i);
                 if (AllControls[i].gameObject.activeInHierarchy)
                 {
-                    CurrentControlText.text = AllControls[i].Name;
+                    if (YandexGame.savesData.language.ToLower() == "ru")
+                        CurrentControlText.text = AllControls[i].RuName;
+                    else
+                        CurrentControlText.text = AllControls[i].EnName;
                 }
             }
         }

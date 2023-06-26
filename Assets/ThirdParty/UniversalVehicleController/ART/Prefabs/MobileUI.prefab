@@ -344,7 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1314f7d288cad6409d3afbfd954d09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415 : \u041A\u041D\u041E\u041F\u041A\u0418"
+  RuName: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415: \u041A\u041D\u041E\u041F\u041A\u0418"
+  EnName: 'CONTROLS: BUTTONS'
   AccelerationBtn: {fileID: 3741956221645864166}
   BrakeReverseBtn: {fileID: 4151793795118510909}
   LeftSteerBtn: {fileID: 3616817567669008881}
@@ -1188,6 +1189,7 @@ GameObject:
   - component: {fileID: 5621448502099472953}
   - component: {fileID: 3116358852047985441}
   - component: {fileID: 3822875433931072465}
+  - component: {fileID: 709750091626923140}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1313,6 +1315,55 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &709750091626923140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3283275399472667456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u041C\u0415\u041D\u042E"
+  en: MENU
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 0
+  countLang: 0
 --- !u!1 &3716973641121363932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,6 +1619,7 @@ GameObject:
   - component: {fileID: 3922854775113136992}
   - component: {fileID: 3922854775113136994}
   - component: {fileID: 3922854775113136993}
+  - component: {fileID: 4438248244465314647}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1693,6 +1745,55 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4438248244465314647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922854775113136999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u041F\u0415\u0420\u0415\u0417\u0410\u041F\u0423\u0421\u0422\u0418\u0422\u042C"
+  en: RESTART
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 0
+  countLang: 0
 --- !u!1 &4345699914434360005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bf1d0bb0e3ba042adcaabaef9c2778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415 : \u0420\u0423\u041B\u042C"
+  RuName: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415 : \u0420\u0423\u041B\u042C"
+  EnName: 'CONTROLS : STEER'
   SteerWheelUI: {fileID: 6527418579552398184}
   AccelerationBtn: {fileID: 2653209552444955595}
   BrakeReverseBtn: {fileID: 1435984387105948104}
