@@ -10,6 +10,12 @@ public class LanguageButton : MonoBehaviour
 
     private void OnDisable() => YandexGame.SwitchLangEvent -= ChangeLanguageGameObject;
 
+    private void Start()
+    {
+        if (YandexGame.SDKEnabled)
+            ChangeLanguageGameObject(YandexGame.savesData.language);
+    }
+
     private void ChangeLanguageGameObject(string lang)
     {
         if (lang == GetComponent<Image>().sprite.name)

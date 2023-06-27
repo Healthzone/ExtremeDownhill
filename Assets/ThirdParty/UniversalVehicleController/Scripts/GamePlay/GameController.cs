@@ -86,7 +86,6 @@ namespace PG
 
         InitializePlayer UpdateSelectedCar(InitializePlayer player, CarController car)
         {
-            Debug.Log(YandexGame.EnvironmentData.deviceType);
             if (!player)
             {
                 PlayerController playerPrefab;

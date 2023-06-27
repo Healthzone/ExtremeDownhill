@@ -23,7 +23,7 @@ public class CarSelector : MonoBehaviour
 
     public void InitPlayer(Scene scene, LoadSceneMode mode)
     {
-        Instantiate(cars[PlayerLevelData.SelectedVehicle], Vector3.zero, Quaternion.identity);
+        Instantiate(cars[PlayerLevelData.SelectedVehicle], new Vector3(0, 2f, 0), Quaternion.identity);
         DynamicGI.UpdateEnvironment();
         OnPlayerCarSpawned?.Invoke();
 
