@@ -515,7 +515,7 @@ namespace YG
 #if !UNITY_EDITOR
             LanguageRequestInternal();
 #else
-            SetLanguage("ru");
+            SetLanguage(YandexGame.savesData.language);
 #endif
         }
         public static void LanguageRequest() => Instance._LanguageRequest();
@@ -1103,7 +1103,7 @@ namespace YG
         #region Language
         public void SetLanguage(string language)
         {
-            string lang = "en";
+            string lang = "ru";
 
             switch (language)
             {

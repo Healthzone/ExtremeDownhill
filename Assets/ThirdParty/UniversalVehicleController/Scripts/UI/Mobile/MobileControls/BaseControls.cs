@@ -9,6 +9,7 @@ namespace PG.UI
         public CarControllerInput UserInput { get; set; }
         public string RuName;
         public string EnName;
+        public string TrName;
 
         public virtual void Init (CarControllerInput userInput)
         {

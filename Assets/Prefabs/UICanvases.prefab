@@ -155,7 +155,7 @@ MonoBehaviour:
   text: 
   ru: "\u0423\u0420\u041E\u0412\u0415\u041D\u042C \u041D\u0415 \u041F\u0420\u041E\u0419\u0414\u0415\u041D"
   en: LEVEL FAIL
-  tr: 
+  tr: "SEV\u0130YE HATASI"
   az: 
   be: 
   he: 
@@ -664,7 +664,7 @@ MonoBehaviour:
   text: 
   ru: "\u041D\u0410\u0417\u0410\u0414"
   en: BACK
-  tr: 
+  tr: "GER\u0130"
   az: 
   be: 
   he: 
@@ -835,7 +835,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -52}
-  m_SizeDelta: {x: 361.2986, y: 115.9857}
+  m_SizeDelta: {x: 429.1544, y: 115.9857}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3469874278017809100
 CanvasRenderer:
@@ -953,7 +953,7 @@ MonoBehaviour:
   text: 
   ru: "\u041F\u0410\u0423\u0417\u0410"
   en: PAUSE
-  tr: 
+  tr: DURAKLAT
   az: 
   be: 
   he: 
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   text: 
   ru: "\u041C\u0415\u041D\u042E"
   en: MENU
-  tr: 
+  tr: "MEN\xDC"
   az: 
   be: 
   he: 
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   text: 
   ru: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415"
   en: CONTROLS
-  tr: 
+  tr: KONTROL
   az: 
   be: 
   he: 
@@ -1662,7 +1662,7 @@ MonoBehaviour:
   text: 
   ru: "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
   en: SETTINGS
-  tr: 
+  tr: AYARLAR
   az: 
   be: 
   he: 
@@ -1848,7 +1848,7 @@ MonoBehaviour:
   text: 
   ru: "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
   en: CONTINUE
-  tr: 
+  tr: DEVAM ETMEK
   az: 
   be: 
   he: 
@@ -2264,7 +2264,7 @@ MonoBehaviour:
     A - TURN LEFT
 
     D - TURN RIGHT'
-  tr: 
+  tr: "w - HIZLANDIR\nS - FREN\nA - SOLA D\xD6N\xDCN\nD - SA\u011EA D\xD6N"
   az: 
   be: 
   he: 
@@ -2745,7 +2745,7 @@ MonoBehaviour:
   text: 
   ru: "\u041C\u0415\u041D\u042E"
   en: MENU
-  tr: 
+  tr: "MEN\xDC"
   az: 
   be: 
   he: 
@@ -3138,7 +3138,8 @@ MonoBehaviour:
 
     C - CHANGE
     CAMERA'
-  tr: 
+  tr: "R - Y\xDCKLEME SEV\u0130YES\u0130\nLEFT SHIFT - NITRO\nTAB - DURAKLAT\nC -
+    KAMERAYI DE\u011E\u0130\u015ET\u0130R"
   az: 
   be: 
   he: 
@@ -3324,7 +3325,7 @@ MonoBehaviour:
   text: 
   ru: "\u041F\u0415\u0420\u0415\u0417\u0410\u041F\u0423\u0421\u0422\u0418\u0422\u042C"
   en: RESTART
-  tr: 
+  tr: "TEKRAR BA\u015ELAT"
   az: 
   be: 
   he: 
@@ -3669,7 +3670,7 @@ MonoBehaviour:
   text: 
   ru: "\u041C\u0415\u041D\u042E"
   en: MENU
-  tr: 
+  tr: "MEN\xDC"
   az: 
   be: 
   he: 
@@ -3855,7 +3856,7 @@ MonoBehaviour:
   text: 
   ru: "\u0421\u041B\u0415\u0414\u0423\u042E\u0429\u0418\u0419 \u0423\u0420\u041E\u0412\u0415\u041D\u042C"
   en: NEXT LEVEL
-  tr: 
+  tr: "SONRAK\u0130 SEV\u0130YE"
   az: 
   be: 
   he: 
@@ -4070,7 +4071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0420\u041E\u0412\u0415\u0420\u042C \u041F\u0420\u041E\u0419\u0414\u0415\u041D"
+  m_text: "\u0423\u0420\u041E\u0412\u0415\u041D\u042C \u041F\u0420\u041E\u0419\u0414\u0415\u041D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7d44333cd8f275647bdffe036ddbe5fc, type: 2}
   m_sharedMaterial: {fileID: 1374755151494341142, guid: 7d44333cd8f275647bdffe036ddbe5fc,
@@ -4156,9 +4157,9 @@ MonoBehaviour:
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "\u0423\u0420\u041E\u0412\u0415\u0420\u042C \u041F\u0420\u041E\u0419\u0414\u0415\u041D"
+  ru: "\u0423\u0420\u041E\u0412\u0415\u041D\u042C \u041F\u0420\u041E\u0419\u0414\u0415\u041D"
   en: LEVEL COMPLETED
-  tr: 
+  tr: "SEV\u0130YE GE\xC7\u0130LD\u0130"
   az: 
   be: 
   he: 
@@ -4344,7 +4345,7 @@ MonoBehaviour:
   text: 
   ru: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415"
   en: CONTROLS
-  tr: 
+  tr: KONTROL
   az: 
   be: 
   he: 
@@ -4926,7 +4927,7 @@ MonoBehaviour:
   text: 
   ru: "\u041C\u0415\u041D\u042E"
   en: MENU
-  tr: 
+  tr: "MEN\xDC"
   az: 
   be: 
   he: 

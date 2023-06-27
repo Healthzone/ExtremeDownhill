@@ -346,7 +346,7 @@ MonoBehaviour:
   text: 
   ru: "\u0421\u0413\u041B\u0410\u0416\u0418\u0412\u0410\u041D\u0418\u0415"
   en: Anti-Aliasing
-  tr: 
+  tr: "YUMU\u015EATMA"
   az: 
   be: 
   he: 
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   text: 
   ru: "\u041D\u0410\u0417\u0410\u0414"
   en: BACK
-  tr: 
+  tr: "GER\u0130"
   az: 
   be: 
   he: 
@@ -1547,7 +1547,9 @@ MonoBehaviour:
     \u0438\u0433\u0440\u044B, \u043D\u043E \u0445\u0443\u0436\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C)</size>"
   en: Render scale <br><size=-20>(the higher the value, the better the quality of
     the game, but the worse the performance)</size>
-  tr: 
+  tr: "G\xF6r\xFCnt\xFC \xD6l\xE7e\u011Fi <br><size=-20>(de\u011Fer ne kadar y\xFCksek
+    olursa, oyunun kalitesi o kadar iyi olur, ancak performans o kadar k\xF6t\xFC
+    olur)</size>"
   az: 
   be: 
   he: 
@@ -1962,7 +1964,7 @@ MonoBehaviour:
   text: 
   ru: "\u0413\u0420\u041E\u041C\u041A\u041E\u0421\u0422\u042C \u0417\u0412\u0423\u041A\u0410"
   en: SOUND VOLUME
-  tr: 
+  tr: "SES SEV\u0130YES\u0130"
   az: 
   be: 
   he: 

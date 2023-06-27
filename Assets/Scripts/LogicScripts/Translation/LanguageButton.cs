@@ -6,23 +6,13 @@ using YG;
 
 public class LanguageButton : MonoBehaviour
 {
-    private void OnEnable() => YandexGame.GetDataEvent += ChangeLanguageGameObject;
+    private void OnEnable() => YandexGame.SwitchLangEvent += ChangeLanguageGameObject;
 
-    private void OnDisable() => YandexGame.GetDataEvent -= ChangeLanguageGameObject;
+    private void OnDisable() => YandexGame.SwitchLangEvent -= ChangeLanguageGameObject;
 
-    private void Start()
+    private void ChangeLanguageGameObject(string lang)
     {
-        if (YandexGame.SDKEnabled)
-        {
-            ChangeLanguageGameObject();
-        }
-
-    }
-
-    private void ChangeLanguageGameObject()
-    {
-        YandexGame.SwitchLanguage(YandexGame.savesData.language);
-        if (YandexGame.savesData.language == GetComponent<Image>().sprite.name)
+        if (lang == GetComponent<Image>().sprite.name)
             gameObject.SetActive(true);
         else
             gameObject.SetActive(false);
