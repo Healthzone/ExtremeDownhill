@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
     }
     private void SwitchAudioVolumeMixer()
     {
-        AudioListener.pause = !AudioListener.pause;
+        AudioListener.pause = true;
     }
 
 

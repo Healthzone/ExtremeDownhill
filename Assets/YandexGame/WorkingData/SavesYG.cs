@@ -21,6 +21,7 @@ namespace YG
         public bool antiAliasingPhone = false;
 
         public int unlockedLastLevel = 1;
+        public int maxLevel = 14;
         // Ваши сохранения
 
         // ...
@@ -32,6 +33,7 @@ namespace YG
         // Вы можете выполнить какие то действия при загрузке сохранений
         public SavesYG()
         {
+            maxLevel = 14;
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
            

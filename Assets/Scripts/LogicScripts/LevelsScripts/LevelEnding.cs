@@ -24,7 +24,10 @@ public class LevelEnding : MonoBehaviour
             if (Convert.ToInt32(SceneManager.GetActiveScene().name) == YandexGame.savesData.unlockedLastLevel)
             {
                 if (YandexGame.savesData.unlockedLastLevel == 1)
+                {
                     YandexMetrica.Send("FirstLevelCompleted");
+                    Debug.Log("FirstLevelCompleted");
+                }
                 YandexGame.savesData.unlockedLastLevel++;
                 YandexGame.SaveProgress();
                 Debug.Log($"Level {YandexGame.savesData.unlockedLastLevel} unlocked");

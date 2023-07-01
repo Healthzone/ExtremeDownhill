@@ -26,5 +26,6 @@ public class GameStates : MonoBehaviour
     private void Start()
     {
         isLevelLoading = false;
+        AudioListener.pause = false;
     }
 }

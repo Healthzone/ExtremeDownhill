@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -23,8 +24,10 @@ public class SceneTransitionManager : MonoBehaviour
     public void StartLoadingNextLevel()
     {
         Time.timeScale = 1f;
-        OnSceneStartLoading.Invoke();
-        if (PlayerLevelData.SelectedLevel != "")
+        //OnSceneStartLoading.Invoke();
+        if (YandexGame.savesData.unlockedLastLevel > YandexGame.savesData.maxLevel)
+            SceneTransition.SwitchToScene("1");
+        else if (PlayerLevelData.SelectedLevel != "")
             SceneTransition.SwitchToScene((Convert.ToInt32(SceneManager.GetActiveScene().name) + 1).ToString());
         else
             SceneTransition.SwitchToScene("1");

@@ -847,6 +847,8 @@ namespace YG
         public static Action OpenFullAdEvent;
         public void OpenFullAd()
         {
+            if (!Application.isMobilePlatform)
+                Cursor.lockState = CursorLockMode.None;
             OpenFullscreenAd.Invoke();
             OpenFullAdEvent?.Invoke();
             nowFullAd = true;
@@ -856,6 +858,8 @@ namespace YG
         public void CloseFullAd(string wasShown)
         {
             nowFullAd = false;
+            if (!Application.isMobilePlatform)
+                Cursor.lockState = CursorLockMode.Locked;
             CloseFullscreenAd.Invoke();
             CloseFullAdEvent?.Invoke();
 #if !UNITY_EDITOR
