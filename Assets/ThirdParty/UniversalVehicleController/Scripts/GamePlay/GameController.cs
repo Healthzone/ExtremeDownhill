@@ -33,10 +33,15 @@ namespace PG
         public void OnEnable()
         {
             CarSelector.OnPlayerCarSpawned.AddListener(InitialiseCar);
+            SceneTransitionManager.OnSceneStartLoading.AddListener(DisabelGravity);
         }
+
+
+
         public void OnDisable()
         {
             CarSelector.OnPlayerCarSpawned.RemoveListener(InitialiseCar);
+            SceneTransitionManager.OnSceneStartLoading.RemoveListener(DisabelGravity);
         }
 
         public void InitialiseCar()
@@ -59,6 +64,10 @@ namespace PG
                 Cursor.lockState = CursorLockMode.Locked;
                 //Cursor.visible = false;
             }
+        }
+        private void DisabelGravity()
+        {
+            AllCars.First().GetComponent<Rigidbody>().isKinematic = true;
         }
 
         public void SetNextCar()

@@ -49,7 +49,7 @@ MonoBehaviour:
   loadingPanel: {fileID: 7419171653248162922}
   waitDelay: 2
   waitDelayBeforeAds: 1
-  waitDelayAfterAds: 1
+  waitDelayAfterAds: 1.5
 --- !u!1001 &4276074657093847099
 PrefabInstance:
   m_ObjectHideFlags: 0

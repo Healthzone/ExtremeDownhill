@@ -24,8 +24,8 @@ public class SceneTransitionManager : MonoBehaviour
     public void StartLoadingNextLevel()
     {
         Time.timeScale = 1f;
-        //OnSceneStartLoading.Invoke();
-        if (YandexGame.savesData.unlockedLastLevel > YandexGame.savesData.maxLevel)
+        OnSceneStartLoading.Invoke();
+        if (YandexGame.savesData.unlockedLastLevel > GameStates.MaxLevel)
             SceneTransition.SwitchToScene("1");
         else if (PlayerLevelData.SelectedLevel != "")
             SceneTransition.SwitchToScene((Convert.ToInt32(SceneManager.GetActiveScene().name) + 1).ToString());
@@ -50,6 +50,7 @@ public class SceneTransitionManager : MonoBehaviour
     public static void RestartCurrentLevelFromMenu()
     {
         Time.timeScale = 1f;
+        OnSceneStartLoading.Invoke();
         SceneTransition.SwitchToScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -66,6 +66,7 @@ public class PauseUI : MonoBehaviour
         _instance.PauseCanvasGameObject.SetActive(true);
         _instance.pausePage.SetActive(true);
         isPaused = true;
+        AudioListener.pause = true;
 
         OnGamePaused?.Invoke();
 
@@ -82,9 +83,10 @@ public class PauseUI : MonoBehaviour
         PauseCanvasGameObject.SetActive(false);
         pausePage.SetActive(false);
         isPaused = false;
-
+        AudioListener.pause = false;
 
         OnGamePaused?.Invoke();
+        
 
     }
 }
