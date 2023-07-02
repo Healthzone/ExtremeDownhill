@@ -27,7 +27,7 @@ public class FirstPlayTips : MonoBehaviour
     {
         controlWindow.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.visible = false;
         YandexGame.savesData.isFirstPlay = false;
         YandexGame.SaveProgress();
     }

@@ -25,10 +25,14 @@ public class SceneTransitionManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         OnSceneStartLoading.Invoke();
-        if (YandexGame.savesData.unlockedLastLevel > GameStates.MaxLevel)
-            SceneTransition.SwitchToScene("1");
-        else if (PlayerLevelData.SelectedLevel != "")
-            SceneTransition.SwitchToScene((Convert.ToInt32(SceneManager.GetActiveScene().name) + 1).ToString());
+        int currentLevel;
+        if (int.TryParse(SceneManager.GetActiveScene().name, out currentLevel))
+        {
+            if (currentLevel + 1 > GameStates.MaxLevel)
+                SceneTransition.SwitchToScene("1");
+            else if (PlayerLevelData.SelectedLevel != "")
+                SceneTransition.SwitchToScene((Convert.ToInt32(SceneManager.GetActiveScene().name) + 1).ToString());
+        }
         else
             SceneTransition.SwitchToScene("1");
     }

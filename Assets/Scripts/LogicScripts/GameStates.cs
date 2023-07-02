@@ -9,9 +9,10 @@ public class GameStates : MonoBehaviour
     private static int maxLevel;
 
     public static bool IsLevelLoading { get => isLevelLoading; set => isLevelLoading = value; }
-    public static int MaxLevel { get => maxLevel;}
+    public static int MaxLevel { get => maxLevel; }
     public GameStates()
     {
+        Debug.Log(maxLevel);
         isLevelLoading = false;
         maxLevel = 14;
     }
