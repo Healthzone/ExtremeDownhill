@@ -6,20 +6,23 @@ using YG;
 public class FirstPlayTips : MonoBehaviour
 {
     [SerializeField] private GameObject controlWindow;
-     
+
     private void Start()
     {
-        if (YandexGame.savesData.isFirstPlay)
+        if (!Application.isMobilePlatform)
         {
-            if(controlWindow != null)
-            controlWindow.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            if(controlWindow != null )
-                Destroy(controlWindow);
+            if (YandexGame.savesData.isFirstPlay)
+            {
+                if (controlWindow != null)
+                    controlWindow.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                if (controlWindow != null)
+                    Destroy(controlWindow);
+            }
         }
     }
 

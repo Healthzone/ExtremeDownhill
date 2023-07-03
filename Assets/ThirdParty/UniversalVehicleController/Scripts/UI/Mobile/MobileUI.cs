@@ -119,8 +119,10 @@ namespace PG.UI
                 {
                     if (YandexGame.savesData.language.ToLower() == "ru")
                         CurrentControlText.text = AllControls[i].RuName;
-                    else
+                    else if(YandexGame.savesData.language.ToLower() == "en")
                         CurrentControlText.text = AllControls[i].EnName;
+                    else
+                        CurrentControlText.text = AllControls[i].TrName;
                 }
             }
         }

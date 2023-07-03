@@ -346,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RuName: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415: \u041A\u041D\u041E\u041F\u041A\u0418"
   EnName: 'CONTROLS: BUTTONS'
+  TrName: 'KONTROLLER: BUTONLAR'
   AccelerationBtn: {fileID: 3741956221645864166}
   BrakeReverseBtn: {fileID: 4151793795118510909}
   LeftSteerBtn: {fileID: 3616817567669008881}
@@ -1333,7 +1334,7 @@ MonoBehaviour:
   text: 
   ru: "\u041C\u0415\u041D\u042E"
   en: MENU
-  tr: 
+  tr: "MEN\xDC"
   az: 
   be: 
   he: 
@@ -1763,7 +1764,7 @@ MonoBehaviour:
   text: 
   ru: "\u041F\u0415\u0420\u0415\u0417\u0410\u041F\u0423\u0421\u0422\u0418\u0422\u042C"
   en: RESTART
-  tr: 
+  tr: "TEKRAR BA\u015ELAT"
   az: 
   be: 
   he: 
@@ -1850,6 +1851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RuName: "\u0423\u041F\u0420\u0410\u0412\u041B\u0415\u041D\u0418\u0415 : \u0420\u0423\u041B\u042C"
   EnName: 'CONTROLS : STEER'
+  TrName: "KONTROL : D\xDCMEN"
   SteerWheelUI: {fileID: 6527418579552398184}
   AccelerationBtn: {fileID: 2653209552444955595}
   BrakeReverseBtn: {fileID: 1435984387105948104}
