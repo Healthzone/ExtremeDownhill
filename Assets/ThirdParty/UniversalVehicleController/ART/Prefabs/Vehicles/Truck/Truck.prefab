@@ -79431,7 +79431,7 @@ MonoBehaviour:
   StartEngineInAwake: 0
   StartEngineDellay: 1.5
   Engine:
-    MaxMotorTorque: 400
+    MaxMotorTorque: 5000
     MotorTorqueFromRpmCurve:
       serializedVersion: 2
       m_Curve:
