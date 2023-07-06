@@ -210,8 +210,8 @@ MonoBehaviour:
     TurboIncreaseSpeed: 3
     TurboDecreaseSpeed: 10
     TurboAdditionalTorque: 0.2
-    EnableBoost: 0
-    BoostAmount: 2
+    EnableBoost: 1
+    BoostAmount: 10
     BoostAdditionalPower: 1
     ProbabilityBackfire: 0
     RPMToNextGear: 6500
