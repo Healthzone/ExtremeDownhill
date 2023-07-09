@@ -40,7 +40,7 @@ public class SceneTransitionManager : MonoBehaviour
     public void BackToMainMenu()
     {
         Time.timeScale = 1f;
-        //OnSceneStartLoading.Invoke();
+        OnSceneStartLoading.Invoke();
         GameStates.IsLevelLoading = true;
         SceneTransition.SwitchToScene("Menu");
     }
