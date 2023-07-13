@@ -117,8 +117,12 @@ namespace PG
 
         public void RestartScene()
         {
-            SceneTransitionManager.RestartCurrentLevel();
-            AllCars.First().GetComponent<Rigidbody>().isKinematic = true;
+            if (!GameStates.IsLevelLoading)
+            {
+                GameStates.IsLevelLoading = true;
+                SceneTransitionManager.RestartCurrentLevel();
+                AllCars.First().GetComponent<Rigidbody>().isKinematic = true;
+            }
         }
     }
 

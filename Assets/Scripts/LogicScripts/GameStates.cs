@@ -10,12 +10,12 @@ public class GameStates : MonoBehaviour
 
     public static bool IsLevelLoading { get => isLevelLoading; set => isLevelLoading = value; }
     public static int MaxLevel { get => maxLevel; }
-    public GameStates()
-    {
-        Debug.Log(maxLevel);
-        isLevelLoading = false;
-        maxLevel = 14;
-    }
+    //public GameStates()
+    //{
+    //    Debug.Log(maxLevel);
+    //    isLevelLoading = false;
+    //    maxLevel = 14;
+    //}
 
     private void OnEnable()
     {
@@ -35,5 +35,6 @@ public class GameStates : MonoBehaviour
     {
         isLevelLoading = false;
         AudioListener.pause = false;
+        maxLevel = 14;
     }
 }
